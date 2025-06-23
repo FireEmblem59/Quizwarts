@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Profile</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Paste the same nav from index.html here -->
+    </header>
+
+    <main id="profile-page" class="container hidden">
+      <section id="profile-header">
+        <img
+          id="profile-avatar"
+          src="https://via.placeholder.com/150"
+          alt="User Avatar"
+        />
+        <div id="profile-info">
+          <h1 id="profile-name">Wizard Name</h1>
+          <p>Level: <span id="profile-level">1</span></p>
+          <p>
+            XP: <span id="profile-xp">0</span> /
+            <span id="xp-to-next-level">100</span>
+          </p>
+        </div>
+      </section>
+
+      <section id="profile-badges">
+        <h2>Your Badges</h2>
+        <div id="badges-container">
+          <!-- Badges will be dynamically loaded here -->
+        </div>
+      </section>
+
+      <section id="profile-history">
+        <h2>Quiz History</h2>
+        <ul id="history-list">
+          <!-- Quiz history will be loaded here -->
+        </ul>
+      </section>
+    </main>
+
+    <div id="auth-gate" class="container">
+      <h1>Access Denied</h1>
+      <p>You must be logged in to view your profile.</p>
+    </div>
+
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/profile.js"></script>
+  </body>
+</html>

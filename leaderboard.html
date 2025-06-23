@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leaderboards</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- Paste the same nav from index.html here -->
+    </header>
+
+    <main class="container">
+      <h1 id="leaderboard-title">Leaderboards</h1>
+      <p>See who reigns supreme! (Showing Top 10)</p>
+
+      <!-- Add a selector for different quizzes later -->
+
+      <table id="leaderboard-table">
+        <thead>
+          <tr>
+            <th>Rank</th>
+            <th>Player</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboard-body">
+          <!-- Scores will be dynamically inserted here -->
+          <tr>
+            <td colspan="3">Loading rankings...</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/leaderboard.js"></script>
+  </body>
+</html>

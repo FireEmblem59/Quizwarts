@@ -4,6 +4,7 @@ import {
   updateDoc,
   increment,
   arrayUnion,
+  setDoc,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
 // DOM Elements
@@ -137,18 +138,20 @@ async function endQuiz() {
   resultsContainer.classList.remove("hidden");
 
   const totalQuestions = currentQuizData.questions.length;
-  const xpEarned = score * 10; // Simple XP calculation
+  const xpEarned = score * 10;
 
   document.getElementById(
     "final-score"
   ).textContent = `${score} / ${totalQuestions}`;
   document.getElementById("xp-earned").textContent = xpEarned;
 
-  // Save results to Firebase if user is logged in
-  if (auth.currentUser) {
-    const userRef = doc(db, "users", auth.currentUser.uid);
+  // ---- LEADERBOARD LOGIC ----
+  const user = auth.currentUser;
+  if (user) {
     const quizId = new URLSearchParams(window.location.search).get("id");
 
+    // Update user profile (existing logic)
+    const userRef = doc(db, "users", user.uid);
     await updateDoc(userRef, {
       xp: increment(xpEarned),
       [`quizHistory.${quizId}`]: {
@@ -157,5 +160,38 @@ async function endQuiz() {
         date: new Date(),
       },
     });
+
+    // Add/Update score on the leaderboard
+    // We use setDoc here to overwrite the user's previous best score.
+    const leaderboardRef = doc(db, "leaderboards", quizId, "scores", user.uid);
+    await setDoc(leaderboardRef, {
+      score: score,
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      uid: user.uid,
+      timestamp: new Date(),
+    });
+    console.log("Score posted to leaderboard!");
+    await checkAndAwardBadges(user, quizId, score, totalQuestions);
   }
+}
+
+async function checkAndAwardBadges(user, quizId, score, totalQuestions) {
+  const userRef = doc(db, "users", user.uid);
+
+  // Badge 1: Perfect Score on a specific quiz
+  if (quizId === "potions-owl" && score === totalQuestions) {
+    await updateDoc(userRef, {
+      badges: arrayUnion("potions-perfect"), // 'potions-perfect' is the badge ID from Firestore
+    });
+    console.log("Awarded 'Potions Perfect Score' badge!");
+    // You can add a visual pop-up here to notify the user!
+  }
+
+  // Badge 2: General achievement (e.g., first quiz taken)
+  // This is just an example of another type of badge
+  // const userData = (await getDoc(userRef)).data();
+  // if (Object.keys(userData.quizHistory).length === 1) {
+  //    await updateDoc(userRef, { badges: arrayUnion('first-quiz') });
+  // }
 }
