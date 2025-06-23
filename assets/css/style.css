@@ -1,0 +1,137 @@
+/* --- Basic Setup & Variables --- */
+:root {
+  --primary-font: "Cinzel", serif;
+  --bg-color: #fdf6e3; /* Parchment color */
+  --text-color: #3a2d21;
+  --accent-color: #7b1113; /* Gryffindor-esque red */
+  --border-color: #d3c8b4;
+  --card-bg: rgba(255, 255, 255, 0.5);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+body.night-mode {
+  --bg-color: #0b0f23;
+  --text-color: #e0e0e0;
+  --accent-color: #f0c43c; /* Golden Snitch gold */
+  --border-color: #4a4a4a;
+  --card-bg: rgba(0, 0, 0, 0.6);
+  background-image: url("../images/marauders-bg.png");
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--primary-font);
+  color: var(--accent-color);
+}
+
+/* --- Layout & Navigation --- */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+nav .logo {
+  font-family: var(--primary-font);
+  font-size: 1.5em;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+nav ul a,
+nav ul button {
+  color: white;
+  text-decoration: none;
+  font-family: var(--primary-font);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* --- Quiz Elements --- */
+#quiz-container {
+  text-align: center;
+}
+#options-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.option-btn {
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  background: transparent;
+  color: var(--text-color);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.option-btn:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+.option-btn.correct {
+  background-color: #28a745;
+  color: white;
+}
+.option-btn.wrong {
+  background-color: #dc3545;
+  color: white;
+}
+
+#lore-container {
+  margin-top: 2rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-left: 4px solid var(--accent-color);
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* --- Utility --- */
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--accent-color);
+  color: white;
+  text-decoration: none;
+  font-family: var(--primary-font);
+  border-radius: 5px;
+  margin-top: 1rem;
+  transition: transform 0.2s;
+}
+.cta-button:hover {
+  transform: scale(1.05);
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz in Progress...</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- Same nav as index.html -->
+    </header>
+
+    <main class="container">
+      <div id="quiz-container" class="hidden">
+        <div id="quiz-header">
+          <h1 id="quiz-title"></h1>
+          <div id="timer">Time: <span>300</span>s</div>
+        </div>
+        <div id="question-container">
+          <p id="question-text"></p>
+          <div id="options-container"></div>
+        </div>
+        <div id="lore-container" class="hidden">
+          <p id="lore-text"></p>
+          <button id="next-question-btn">Next Question</button>
+        </div>
+      </div>
+
+      <div id="results-container" class="hidden">
+        <h2>Quiz Complete!</h2>
+        <p>Your Score: <span id="final-score"></span></p>
+        <p>XP Earned: <span id="xp-earned"></span></p>
+        <a href="index.html">Back to Main Hall</a>
+        <button id="share-results">Share Results</button>
+      </div>
+
+      <div id="loading-screen">
+        <p>Preparing your parchment...</p>
+      </div>
+    </main>
+
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/quiz.js"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+{
+  "title": "Potions O.W.L. Exam",
+  "category": "Harry Potter",
+  "difficulty": "O.W.L.",
+  "timeLimit": 300,
+  "questions": [
+    {
+      "question": "Which of these is a key ingredient in the Polyjuice Potion?",
+      "options": [
+        "Lacewing flies",
+        "Bezoar",
+        "Mandrake root",
+        "Boomslang skin"
+      ],
+      "answer": 0,
+      "lore": "Lacewing flies must be stewed for 21 days before being used in the Polyjuice Potion."
+    },
+    {
+      "question": "What is the primary effect of the Draught of Living Death?",
+      "options": [
+        "Induces euphoria",
+        "A powerful sleeping potion",
+        "Forces the drinker to tell the truth",
+        "Cures boils"
+      ],
+      "answer": 1,
+      "lore": "The Draught of Living Death is so powerful it can make the drinker appear dead. The antidote is the Wiggenweld Potion."
+    },
+    {
+      "question": "Felix Felicis is also known as...",
+      "options": [
+        "Liquid Luck",
+        "Veritaserum",
+        "Amortentia",
+        "Wolfsbane Potion"
+      ],
+      "answer": 0,
+      "lore": "Felix Felicis makes the drinker lucky for a period of time, during which all their endeavors will tend to succeed."
+    },
+    {
+      "question": "Which potion would you use to regrow bones?",
+      "options": [
+        "Pepperup Potion",
+        "Ageing Potion",
+        "Skele-Gro",
+        "Draught of Peace"
+      ],
+      "answer": 2,
+      "lore": "Harry had to take Skele-Gro after Gilderoy Lockhart accidentally removed the bones from his arm. The process is famously unpleasant."
+    }
+  ]
+}
