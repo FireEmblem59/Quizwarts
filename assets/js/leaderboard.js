@@ -7,14 +7,38 @@ import {
   getDocs,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
-document.addEventListener("DOMContentLoaded", async () => {
-  const leaderboardBody = document.getElementById("leaderboard-body");
-  const leaderboardTitle = document.getElementById("leaderboard-title");
+const leaderboardBody = document.getElementById("leaderboard-body");
+const leaderboardTitle = document.getElementById("leaderboard-title");
 
-  // For now, hardcode the quiz leaderboard to show.
-  // In the future, you can use URL params like `leaderboard.html?id=potions-owl`
-  const quizId = "potions-owl";
-  leaderboardTitle.textContent = `Leaderboard: ${quizId.replace("-", " ")}`;
+// A predefined list of quizzes for a dropdown selector
+const availableQuizzes = {
+  "potions-owl": "Potions O.W.L.",
+  "jedi-trials": "Jedi Trials", // Add more as you create them
+  "sorting-hat": "Sorting Hat",
+};
+
+function createQuizSelector(currentQuizId) {
+  let selectorHtml = `<label for="quiz-select">Select Leaderboard: </label>
+    <select id="quiz-select">`;
+  for (const [id, title] of Object.entries(availableQuizzes)) {
+    const selected = id === currentQuizId ? "selected" : "";
+    selectorHtml += `<option value="${id}" ${selected}>${title}</option>`;
+  }
+  selectorHtml += `</select>`;
+  leaderboardTitle.insertAdjacentHTML("afterend", selectorHtml);
+
+  document.getElementById("quiz-select").addEventListener("change", (e) => {
+    // Change the URL without reloading the page to load the new leaderboard
+    window.location.search = `?id=${e.target.value}`;
+  });
+}
+
+async function fetchAndDisplayLeaderboard(quizId) {
+  leaderboardTitle.textContent = `Leaderboard: ${
+    availableQuizzes[quizId] || "Unknown"
+  }`;
+  leaderboardBody.innerHTML =
+    '<tr><td colspan="3">Loading rankings...</td></tr>';
 
   try {
     const scoresQuery = query(
@@ -22,7 +46,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       orderBy("score", "desc"),
       limit(10)
     );
-
     const querySnapshot = await getDocs(scoresQuery);
 
     leaderboardBody.innerHTML = ""; // Clear loading message
@@ -41,7 +64,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                     <td>${rank++}</td>
                     <td class="player-cell">
                         <img src="${
-                          data.photoURL
+                          data.photoURL || "https://via.placeholder.com/40"
                         }" alt="avatar" class="avatar-small">
                         <span>${data.displayName}</span>
                     </td>
@@ -55,4 +78,16 @@ document.addEventListener("DOMContentLoaded", async () => {
     leaderboardBody.innerHTML =
       '<tr><td colspan="3">Could not load rankings.</td></tr>';
   }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  let quizId = urlParams.get("id");
+
+  if (!quizId || !availableQuizzes[quizId]) {
+    quizId = "potions-owl"; // Default to potions-owl if no/invalid ID is provided
+  }
+
+  createQuizSelector(quizId);
+  fetchAndDisplayLeaderboard(quizId);
 });
