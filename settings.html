@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - The Grand Archive</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <!-- Add FontAwesome for the icons in the toggle switch -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="index.html" class="logo">The Grand Archive</a>
+        <ul>
+          <li><a href="leaderboard.html">Leaderboards</a></li>
+          <li>
+            <a href="profile.html" id="profile-link" class="hidden">Profile</a>
+          </li>
+          <li><button id="auth-button">Login</button></li>
+          <li><button id="theme-toggle">🌙</button></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1>Settings</h1>
+      <p>Customize your experience in the Grand Archive.</p>
+
+      <section class="settings-section">
+        <h2>Audio</h2>
+        <div class="setting-item">
+          <label for="audio-toggle">Enable Sound Effects</label>
+          <label class="switch">
+            <input type="checkbox" id="audio-toggle" />
+            <span class="slider round">
+              <i class="fas fa-volume-xmark icon-off"></i>
+              <i class="fas fa-volume-high icon-on"></i>
+            </span>
+          </label>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>Account</h2>
+        <div class="setting-item">
+          <p>
+            Clearing your cache will reset any non-essential saved preferences.
+            Your XP, badges, and scores will not be affected.
+          </p>
+          <button id="clear-cache-btn" class="cta-button danger">
+            Clear Local Cache
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div id="notification-container"></div>
+    <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/settings.js"></script>
+  </body>
+</html>

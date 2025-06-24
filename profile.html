@@ -15,6 +15,9 @@
           <li>
             <a href="profile.html" id="profile-link" class="hidden">Profile</a>
           </li>
+          <li>
+            <a href="settings.html"><i class="fas fa-cog"></i>Settings</a>
+          </li>
           <li><button id="auth-button">Login</button></li>
           <li><button id="theme-toggle">🌙</button></li>
         </ul>
@@ -51,6 +54,14 @@
           <!-- Quiz history will be loaded here -->
         </ul>
       </section>
+
+      <div id="badge-modal" class="badge-modal hidden">
+        <div class="badge-modal-content" onclick="event.stopPropagation()">
+          <img id="modal-image" src="" alt="" />
+          <h2 id="modal-title"></h2>
+          <p id="modal-description"></p>
+        </div>
+      </div>
     </main>
 
     <div id="auth-gate" class="container">
@@ -58,7 +69,22 @@
       <p>You must be logged in to view your profile.</p>
     </div>
 
+    <script>
+      function openBadgeModal(imageUrl, name, description) {
+        const modal = document.getElementById("badge-modal");
+        document.getElementById("modal-image").src = imageUrl;
+        document.getElementById("modal-image").alt = name;
+        document.getElementById("modal-title").textContent = name;
+        document.getElementById("modal-description").textContent = description;
+        modal.classList.remove("hidden");
+      }
+
+      document.getElementById("badge-modal").addEventListener("click", () => {
+        document.getElementById("badge-modal").classList.add("hidden");
+      });
+    </script>
     <script type="module" src="assets/js/main.js"></script>
     <script type="module" src="assets/js/profile.js"></script>
+    <div id="notification-container"></div>
   </body>
 </html>

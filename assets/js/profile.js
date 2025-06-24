@@ -3,7 +3,13 @@ import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.15.0/fi
 import {
   doc,
   getDoc,
+  collection,
+  query,
+  where,
+  getDocs,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+
+import { getUserProfile } from "./firestore-api.js";
 
 const profilePage = document.getElementById("profile-page");
 const authGate = document.getElementById("auth-gate");
@@ -24,18 +30,26 @@ onAuthStateChanged(auth, (user) => {
 
 // --- DATA FETCHING & RENDERING ---
 async function loadUserProfile(uid) {
-  const userRef = doc(db, "users", uid);
-  const docSnap = await getDoc(userRef);
+  const docSnap = await getUserProfile(uid);
 
   if (docSnap.exists()) {
     const userData = docSnap.data();
 
-    // Populate Header
-    document.getElementById("profile-avatar").src =
-      userData.photoURL || "https://via.placeholder.com/150";
+    // Fade-in profile avatar loading
+    const avatarImg = document.getElementById("profile-avatar");
+    const avatarUrl =
+      userData.photoURL ||
+      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AProfile_avatar_placeholder_large.png&psig=AOvVaw30sC0tzX2xXb7E9uyJWVqV&ust=1750810386243000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPi0go3jiI4DFQAAAAAdAAAAABAE";
+    avatarImg.classList.remove("loaded");
+    avatarImg.onload = () => {
+      avatarImg.classList.add("loaded");
+    };
+    avatarImg.src = avatarUrl;
+
+    // Populate profile text info
     document.getElementById("profile-name").textContent = userData.displayName;
 
-    // Populate Stats (with leveling logic)
+    // Leveling info
     const level = Math.floor(userData.xp / 100) + 1;
     const xpForNextLevel = 100;
     const currentXPInLevel = userData.xp % 100;
@@ -43,9 +57,34 @@ async function loadUserProfile(uid) {
     document.getElementById("profile-xp").textContent = currentXPInLevel;
     document.getElementById("xp-to-next-level").textContent = xpForNextLevel;
 
-    // Populate Quiz History
+    // Check if a level-up occurred previously
+    if (localStorage.getItem("levelUp") === "true") {
+      const levelElement = document.getElementById("profile-level");
+      levelElement.classList.add("level-up-animation");
+
+      // Optional: remove animation class after it's played so it can replay next time
+      setTimeout(
+        () => levelElement.classList.remove("level-up-animation"),
+        1000
+      );
+
+      // Show a toast or message
+      if (typeof showNotification === "function") {
+        showNotification(
+          "Level Up!",
+          `You've reached Level ${level}!`,
+          "success"
+        );
+      } else {
+        alert(`Level Up! You've reached Level ${level}!`);
+      }
+
+      localStorage.removeItem("levelUp");
+    }
+
+    // Quiz history
     const historyList = document.getElementById("history-list");
-    historyList.innerHTML = ""; // Clear
+    historyList.innerHTML = "";
     if (userData.quizHistory && Object.keys(userData.quizHistory).length > 0) {
       for (const [quizId, result] of Object.entries(userData.quizHistory)) {
         const date = result.date.toDate().toLocaleDateString();
@@ -56,8 +95,8 @@ async function loadUserProfile(uid) {
       historyList.innerHTML = "<li>No quizzes taken yet!</li>";
     }
 
-    // We will call the badge renderer here in the next step
-    // renderBadges(userData.badges);
+    // Render badges with fade-in images
+    await renderBadges(userData.badges || []);
   } else {
     console.error("No user data found in Firestore!");
     authGate.innerHTML =
@@ -65,7 +104,6 @@ async function loadUserProfile(uid) {
     authGate.classList.remove("hidden");
     profilePage.classList.add("hidden");
   }
-  await renderBadges(userData.badges || []);
 }
 
 async function renderBadges(badgeIds) {
@@ -78,20 +116,37 @@ async function renderBadges(badgeIds) {
     return;
   }
 
-  for (const badgeId of badgeIds) {
-    const badgeRef = doc(db, "badges", badgeId); // NOTE: Here we use the badgeId as the document ID.
-    // If you auto-generated IDs, you'd need to query by the 'id' field instead.
-    const badgeSnap = await getDoc(badgeRef);
+  // Get a reference to the 'badges' collection
+  const badgesRef = collection(db, "badges");
 
-    if (badgeSnap.exists()) {
-      const badgeData = badgeSnap.data();
-      const badgeElement = `
-                <div class="badge" title="${badgeData.description}">
-                    <img src="${badgeData.imageUrl}" alt="${badgeData.name}">
-                    <span>${badgeData.name}</span>
-                </div>
-            `;
-      badgesContainer.innerHTML += badgeElement;
+  for (const badgeId of badgeIds) {
+    // Create a query to find the document WHERE the 'id' field matches our badgeId
+    const q = query(badgesRef, where("id", "==", badgeId));
+
+    try {
+      const querySnapshot = await getDocs(q);
+
+      // Check if the query returned any results
+      if (!querySnapshot.empty) {
+        // We only expect one result, so get the first document
+        const badgeDoc = querySnapshot.docs[0];
+        const badgeData = badgeDoc.data();
+
+        const badgeElement = `
+        <div class="badge" onclick="openBadgeModal('${badgeData.imageUrl}', '${
+          badgeData.name
+        }', '${badgeData.description.replace(/'/g, "\\'")}')">
+            <img src="${badgeData.imageUrl}" alt="${badgeData.name}">
+            <span class="badge-title">${badgeData.name}</span>
+        </div>
+        `;
+
+        badgesContainer.innerHTML += badgeElement;
+      } else {
+        console.warn(`Badge with id "${badgeId}" not found in the database.`);
+      }
+    } catch (error) {
+      console.error("Error fetching badge:", error);
     }
   }
 }

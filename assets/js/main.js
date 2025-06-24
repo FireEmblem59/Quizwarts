@@ -1,8 +1,7 @@
 import { auth, db } from "./firebase-config.js";
 import {
   GoogleAuthProvider,
-  signInWithRedirect,
-  getRedirectResult,
+  signInWithPopup,
   signOut,
   onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js";
@@ -25,42 +24,32 @@ authButton.addEventListener("click", () => {
     signOut(auth);
   } else {
     // No user is signed in, so show popup
-    signInWithRedirect(auth, provider).catch((error) => {
-      console.error("Error during sign-in:", error);
-    });
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        console.log("User signed in:", result.user);
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+
+        // Check if user exists in Firestore, if not, create a profile
+        checkAndCreateUserProfile(user);
+      })
+      .catch((error) => {
+        console.error("Authentication error:", error);
+      });
   }
 });
-
-getRedirectResult(auth)
-  .then((result) => {
-    if (result) {
-      // This means the user has just signed in.
-      // You can get the Google Access Token here if needed.
-      const credential = GoogleAuthProvider.credentialFromResult(result);
-      const token = credential.accessToken;
-      const user = result.user;
-
-      // Check for user profile and create one if it doesn't exist
-      checkAndCreateUserProfile(user);
-    }
-  })
-  .catch((error) => {
-    // Handle Errors here.
-    console.error("Authentication redirect error:", error);
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    const email = error.customData.email;
-    const credential = GoogleAuthProvider.credentialFromError(error);
-  });
 
 // Listen for auth state changes
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    // User is signed in.
+    // User is signed in
     authButton.textContent = "Logout";
     profileLink.classList.remove("hidden");
   } else {
-    // User is signed out.
+    // User is signed out
     authButton.textContent = "Login with Google";
     profileLink.classList.add("hidden");
   }

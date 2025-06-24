@@ -1,17 +1,29 @@
-/* --- Basic Setup & Variables --- */
+/* ==========================================================================
+   Magical Quiz Website - Main Stylesheet
+   ========================================================================== */
+
+/* --- 1. Basic Setup & Theming Variables --- */
 :root {
   --primary-font: "Cinzel", serif;
+  --body-font: Arial, sans-serif;
+
+  /* Light Theme (Default) */
   --bg-color: #fdf6e3; /* Parchment color */
   --text-color: #3a2d21;
   --accent-color: #7b1113; /* Gryffindor-esque red */
   --border-color: #d3c8b4;
-  --card-bg: rgba(255, 255, 255, 0.5);
+  --card-bg: rgba(255, 255, 255, 0.4);
+  --card-bg-solid: #f9f2e7;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --shadow-color: rgba(0, 0, 0, 0.2);
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: var(--body-font);
   background-image: url("../images/background.jpg");
   background-size: cover;
+  background-position: center center;
   background-attachment: fixed;
   background-color: var(--bg-color);
   color: var(--text-color);
@@ -20,66 +32,218 @@ body {
 }
 
 body.night-mode {
+  /* Dark Theme */
   --bg-color: #0b0f23;
   --text-color: #e0e0e0;
   --accent-color: #f0c43c; /* Golden Snitch gold */
   --border-color: #4a4a4a;
-  --card-bg: rgba(0, 0, 0, 0.6);
+  --card-bg: rgba(11, 15, 35, 0.5);
+  --card-bg-solid: #1c213a;
+  --success-color: #31c450;
+  --danger-color: #e84a5f;
+  --shadow-color: rgba(0, 0, 0, 0.4);
   background-image: url("../images/marauders-bg.png");
 }
 
+/* --- 2. Typography --- */
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--primary-font);
   color: var(--accent-color);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+h1 {
+  font-size: 2.5em;
+}
+h2 {
+  font-size: 2em;
+}
+p {
+  line-height: 1.6;
+}
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
-/* --- Layout & Navigation --- */
+/* --- 3. Layout & Main Container --- */
 .container {
   max-width: 900px;
   margin: 2rem auto;
   padding: 2rem;
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 5px 25px var(--shadow-color);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.hidden {
+  display: none !important;
 }
 
+/* --- 4. Navigation Bar --- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 nav .logo {
   font-family: var(--primary-font);
   font-size: 1.5em;
   font-weight: 700;
-  color: white;
+  color: #fff;
   text-decoration: none;
+  transition: transform 0.2s ease;
 }
-
+nav .logo:hover {
+  transform: scale(1.05);
+}
 nav ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
   align-items: center;
 }
 nav ul a,
 nav ul button {
-  text-decoration: none;
-  font-family: var(--primary-font);
-  padding: 0.5rem 1rem;
+  color: #fff;
+  background-color: transparent;
+  border: 1px solid transparent;
   border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-family: var(--body-font);
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
   transition: background-color 0.2s, color 0.2s;
 }
+nav ul a:hover,
+nav ul button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+}
+#auth-button {
+  border: 1px solid #fff;
+}
+#theme-toggle {
+  font-size: 1.2rem;
+}
 
-/* --- Quiz Elements --- */
+/* --- 5. Buttons & Interactive Elements --- */
+.cta-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: var(--accent-color);
+  color: #fff !important;
+  text-decoration: none;
+  font-family: var(--primary-font);
+  border-radius: 5px;
+  border: none;
+  margin-top: 1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+
+.button-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --- 6. Homepage Specific --- */
+.hero {
+  text-align: center;
+  padding: 2rem 0;
+}
+.hero-image {
+  max-width: 150px;
+  margin-bottom: 1rem;
+}
+.quiz-selection {
+  margin-top: 3rem;
+}
+.quiz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.quiz-card {
+  background-color: var(--card-bg-solid);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.quiz-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+.quiz-card h3 {
+  margin-bottom: 0.5rem;
+}
+.quiz-card p {
+  font-size: 0.9em;
+  margin-bottom: 1.5rem;
+}
+.quiz-card a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent-color);
+  color: #fff;
+  border-radius: 5px;
+}
+
+/* --- 7. Quiz Page --- */
+#quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 1rem;
+}
 #quiz-container {
   text-align: center;
+}
+#question-text {
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  font-weight: bold;
 }
 #options-container {
   display: grid;
@@ -90,65 +254,175 @@ nav ul button {
 .option-btn {
   padding: 1rem;
   border: 2px solid var(--border-color);
-  background: transparent;
+  background: var(--card-bg-solid);
   color: var(--text-color);
   cursor: pointer;
+  font-size: 1rem;
   transition: all 0.2s;
+  border-radius: 8px;
 }
-.option-btn:hover {
+.option-btn:not(:disabled):hover {
   background-color: var(--accent-color);
-  color: white;
+  color: #fff;
+  border-color: var(--accent-color);
 }
 .option-btn.correct {
-  background-color: #28a745;
-  color: white;
+  background-color: var(--success-color);
+  border-color: var(--success-color);
+  color: #fff;
 }
 .option-btn.wrong {
-  background-color: #dc3545;
-  color: white;
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+  color: #fff;
 }
-
+.option-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
 #lore-container {
   margin-top: 2rem;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.05);
   border-left: 4px solid var(--accent-color);
+  border-radius: 0 8px 8px 0;
+  text-align: left;
 }
-
-.hidden {
-  display: none !important;
-}
-
-/* --- Utility --- */
-.cta-button {
-  display: inline-block;
-  padding: 12px 24px;
+#next-question-btn {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
   background-color: var(--accent-color);
   color: white;
-  text-decoration: none;
-  font-family: var(--primary-font);
+  border: none;
   border-radius: 5px;
-  margin-top: 1rem;
-  transition: transform 0.2s;
 }
-.cta-button:hover {
-  transform: scale(1.05);
+#next-question-btn:disabled {
+  background-color: grey;
+  cursor: not-allowed;
+}
+.results-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
 }
 
+/* --- 8. Profile Page --- */
+#profile-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+#profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 4px solid var(--accent-color);
+  object-fit: cover;
+  background-color: var(--border-color); /* Placeholder color */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+#profile-avatar.loaded {
+  opacity: 1;
+}
+
+#profile-info p {
+  margin: 0.5rem 0;
+}
+#profile-badges,
+#profile-history {
+  margin-top: 2rem;
+}
+#profile-history ul {
+  list-style: none;
+  padding-left: 0;
+}
+#profile-history li {
+  padding: 10px;
+  background-color: var(--card-bg-solid);
+  margin-bottom: 8px;
+  border-radius: 5px;
+  border-left: 3px solid var(--accent-color);
+}
+#badges-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+}
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--card-bg-solid);
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.badge:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+.badge img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+.badge-title {
+  font-size: 0.9em;
+  font-weight: bold;
+  font-family: var(--primary-font);
+}
+
+.level-up-animation {
+  animation: levelUp 1s ease-out;
+}
+@keyframes levelUp {
+  0% {
+    transform: scale(1);
+    color: var(--text-color);
+  }
+  50% {
+    transform: scale(1.5);
+    color: var(--accent-color);
+  }
+  100% {
+    transform: scale(1);
+    color: var(--text-color);
+  }
+}
+
+/* --- 9. Leaderboard Page --- */
+#leaderboard-title {
+  margin-bottom: 0.5rem;
+}
 #leaderboard-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 #leaderboard-table th,
 #leaderboard-table td {
   padding: 12px 15px;
   border-bottom: 1px solid var(--border-color);
   text-align: left;
+  vertical-align: middle;
 }
 #leaderboard-table th {
   background-color: rgba(0, 0, 0, 0.1);
   font-family: var(--primary-font);
+}
+#leaderboard-table tr:last-child td {
+  border-bottom: none;
 }
 .player-cell {
   display: flex;
@@ -159,60 +433,275 @@ nav ul button {
   height: 40px;
   border-radius: 50%;
   margin-right: 15px;
+  object-fit: cover;
+}
+#quiz-select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid var(--border-color);
+  background: var(--card-bg-solid);
+  color: var(--text-color);
+  font-family: var(--body-font);
+  margin-left: 10px;
 }
 
-#profile-header {
+/* --- 10. Modals & Popups --- */
+.badge-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   display: flex;
   align-items: center;
-  gap: 2rem;
-  margin-bottom: 2rem;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
 }
-#profile-avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  border: 4px solid var(--accent-color);
+.badge-modal:not(.hidden) {
+  opacity: 1;
 }
-#profile-history ul {
-  list-style: none;
-  padding-left: 0;
+.badge-modal-content {
+  background: var(--card-bg-solid);
+  color: var(--text-color);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  max-width: 90%;
+  width: 450px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  cursor: default;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
 }
-#profile-history li {
-  padding: 10px;
-  background-color: rgba(0, 0, 0, 0.05);
-  margin-bottom: 5px;
-  border-radius: 5px;
+.badge-modal:not(.hidden) .badge-modal-content {
+  transform: scale(1);
+}
+.badge-modal-content img {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+.badge-modal-content #modal-title {
+  color: var(--accent-color);
+}
+.badge-modal-content #modal-description {
+  font-size: 1rem;
 }
 
-#badges-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+/* --- 11. Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  h1 {
+    font-size: 2em;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #options-container {
+    grid-template-columns: 1fr;
+  }
+  #quiz-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  #profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
 }
-.badge {
+
+/* --- 12. Custom Notification (Toast) System --- */
+
+#notification-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2000; /* Ensure it's on top of everything */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100px;
-  text-align: center;
-}
-.badge img {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 5px;
-  transition: transform 0.2s;
-}
-.badge:hover img {
-  transform: scale(1.1);
-}
-.badge span {
-  font-size: 0.8em;
+  gap: 10px;
 }
 
-.results-actions {
+.toast {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  min-width: 300px;
+  background: var(--card-bg-solid);
+  color: var(--text-color);
+  border-left: 5px solid var(--accent-color);
+  border-radius: 8px;
+  box-shadow: 0 5px 15px var(--shadow-color);
+  transform: translateX(120%);
+  opacity: 0;
+  animation: slideIn 0.5s forwards, fadeOut 0.5s 4.5s forwards;
+  transition: transform 0.3s ease;
+}
+
+.toast.success {
+  border-left-color: var(--success-color);
+}
+body.night-mode .toast.success {
+  border-left-color: #31c450;
+}
+
+.toast .icon {
+  font-size: 2em;
+}
+.toast.success .icon {
+  color: var(--success-color);
+}
+body.night-mode .toast.success .icon {
+  color: #31c450;
+}
+
+.toast .text-content h4 {
+  font-family: var(--primary-font);
+  color: var(--text-color);
+  margin: 0 0 5px 0;
+}
+body.night-mode .toast .text-content h4 {
+  color: var(--text-color);
+}
+
+.toast .text-content p {
+  font-size: 0.9em;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Keyframe animations for sliding and fading */
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    transform: translateX(120%);
+    opacity: 0;
+  }
+}
+
+/* --- 12. Settings Page --- */
+
+.settings-section {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.setting-item label:first-child {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* --- Cool Toggle Switch --- */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--success-color);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--success-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(36px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Icons inside the switch */
+.slider .fas {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.slider .icon-off {
+  left: 10px;
+}
+.slider .icon-on {
+  right: 10px;
+}
+
+input:not(:checked) + .slider .icon-off,
+input:checked + .slider .icon-on {
+  opacity: 1;
+}
+
+/* --- Danger Button --- */
+.cta-button.danger {
+  background-color: var(--danger-color);
 }

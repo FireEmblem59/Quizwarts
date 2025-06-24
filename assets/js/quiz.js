@@ -8,6 +8,10 @@ import {
   getDoc,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
+import { showNotification } from "./notifications.js";
+
+import { playSound } from "./audio.js";
+
 // DOM Elements
 const quizContainer = document.getElementById("quiz-container");
 const resultsContainer = document.getElementById("results-container");
@@ -119,9 +123,11 @@ function handleAnswer(event) {
   nextQuestionBtn.disabled = true;
 
   if (selectedButton.dataset.correct === "true") {
+    playSound("assets/audio/correct.mp3");
     score++;
     selectedButton.classList.add("correct");
   } else {
+    playSound("assets/audio/wrong.mp3");
     selectedButton.classList.add("wrong");
     // Find and highlight the correct button
     const correctButton = optionsContainer.querySelector(
@@ -165,46 +171,52 @@ async function endQuiz() {
   quizContainer.classList.add("hidden");
   resultsContainer.classList.remove("hidden");
 
-  const quizId = new URLSearchParams(window.location.search).get("id");
-  document.getElementById("results-container").innerHTML = `
-    <h2>Quiz Complete!</h2>
-    <p>Your Score: <span id="final-score">${score} / ${totalQuestions}</span></p>
-    <p>XP Earned: <span id="xp-earned">${xpEarned}</span></p>
-    <div class="results-actions">
-        <a href="quiz.html?id=${quizId}" class="cta-button">Try Again</a>
-        <a href="leaderboard.html?id=${quizId}" class="cta-button">View Leaderboard</a>
-        <a href="index.html" class="cta-button">Choose Another Quiz</a>
-    </div>
-`;
-
   const totalQuestions = currentQuizData.questions.length;
   const xpEarned = score * 10;
+  const quizId = new URLSearchParams(window.location.search).get("id");
 
-  document.getElementById(
-    "final-score"
-  ).textContent = `${score} / ${totalQuestions}`;
-  document.getElementById("xp-earned").textContent = xpEarned;
+  // Render initial results HTML
+  resultsContainer.innerHTML = `
+      <h2>Quiz Complete!</h2>
+      <p>Your Score: <span id="final-score">${score} / ${totalQuestions}</span></p>
+      <p>XP Earned: <span id="xp-earned">${xpEarned}</span></p>
+      <div class="results-actions">
+          <a href="quiz.html?id=${quizId}" class="cta-button">Try Again</a>
+          <a href="leaderboard.html?id=${quizId}" class="cta-button" id="leaderboard-result-btn">View Leaderboard</a>
+          <a href="index.html" class="cta-button">Choose Another Quiz</a>
+      </div>
+    `;
 
   const user = auth.currentUser;
   if (user) {
-    const quizId = new URLSearchParams(window.location.search).get("id");
-    const userRef = doc(db, "users", user.uid);
+    const leaderboardButton = document.getElementById("leaderboard-result-btn");
+    if (leaderboardButton) {
+      leaderboardButton.innerHTML =
+        '<span class="button-spinner"></span> Saving...';
+      leaderboardButton.style.pointerEvents = "none";
+    }
 
+    const userRef = doc(db, "users", user.uid);
     const userDoc = await getDoc(userRef);
     const userData = userDoc.data();
 
-    // Check if the user has ALREADY played this quiz.
-    if (!userData.quizHistory || !userData.quizHistory[quizId]) {
+    let isFirstTime = !userData.quizHistory || !userData.quizHistory[quizId];
+
+    if (isFirstTime) {
       console.log(
         "First time playing this quiz. Awarding XP and posting to leaderboard."
       );
 
-      // This is their first time, so update XP and leaderboard
-      await updateDoc(userRef, {
-        xp: increment(xpEarned),
-      });
+      // XP & Level up logic
+      const oldLevel = Math.floor(userData.xp / 100) + 1;
+      const newLevel = Math.floor((userData.xp + xpEarned) / 100) + 1;
+      if (newLevel > oldLevel) {
+        localStorage.setItem("levelUp", "true");
+      }
 
-      // Add/Update score on the leaderboard
+      await updateDoc(userRef, { xp: increment(xpEarned) });
+
+      // Save to leaderboard
       const leaderboardRef = doc(
         db,
         "leaderboards",
@@ -219,18 +231,16 @@ async function endQuiz() {
         uid: user.uid,
         timestamp: new Date(),
       });
-
-      // Check for badges
-      await checkAndAwardBadges(userRef, quizId, score, totalQuestions);
     } else {
       console.log("Quiz already played. No XP or leaderboard update.");
-      // Optionally, tell the user why they didn't get XP
-      document.getElementById(
-        "xp-earned"
-      ).textContent = `${xpEarned} (XP only awarded on first completion)`;
+      const xpElement = document.getElementById("xp-earned");
+      if (xpElement) {
+        xpElement.innerHTML = `${xpEarned} (XP only awarded on first completion)`;
+      }
     }
 
-    // Always update the history, regardless of whether it's the first time
+    // Award badges and update history
+    await checkAndAwardBadges(userRef, userData, quizId, score, totalQuestions);
     await updateDoc(userRef, {
       [`quizHistory.${quizId}`]: {
         score: score,
@@ -238,16 +248,49 @@ async function endQuiz() {
         date: new Date(),
       },
     });
+
+    // Restore leaderboard button
+    if (leaderboardButton) {
+      leaderboardButton.textContent = "View Leaderboard";
+      leaderboardButton.style.pointerEvents = "auto";
+    }
   }
 }
-async function checkAndAwardBadges(userRef, quizId, score, totalQuestions) {
+
+async function checkAndAwardBadges(
+  userRef,
+  userData,
+  quizId,
+  score,
+  totalQuestions
+) {
+  // --- Badge 1: Perfect Score ---
   if (quizId === "potions-owl" && score === totalQuestions) {
     await updateDoc(userRef, {
       badges: arrayUnion("potions-perfect"),
     });
-    // Let's add a fun notification!
-    alert(
-      "✨ New Badge Unlocked: Potions Perfect Score! ✨\nCheck your profile to see it."
-    );
+    showNotification("Badge Unlocked!", "Potions Perfect Score", "success");
+  }
+
+  // --- Badge 2: First Quiz Completed ---
+  // Check if the user has a 'badges' array and if it already includes our badge
+  const hasFirstQuizBadge =
+    userData.badges && userData.badges.includes("first-quiz-completed");
+
+  // If the history is empty AND they don't have the badge yet, award it.
+  if (
+    (!userData.quizHistory || Object.keys(userData.quizHistory).length === 0) &&
+    !hasFirstQuizBadge
+  ) {
+    await updateDoc(userRef, {
+      badges: arrayUnion("first-quiz-completed"),
+    });
+    setTimeout(() => {
+      showNotification(
+        "Badge Unlocked!",
+        "First Steps: You completed your first quiz!",
+        "success"
+      );
+    }, 300);
   }
 }
