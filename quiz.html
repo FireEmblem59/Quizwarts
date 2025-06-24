@@ -10,6 +10,20 @@
       rel="stylesheet"
     />
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-TCT97QXVXG"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-TCT97QXVXG");
+  </script>
   <body>
     <header>
       <nav>
@@ -23,7 +37,6 @@
             <a href="settings.html"><i class="fas fa-cog"></i>Settings</a>
           </li>
           <li><button id="auth-button">Login</button></li>
-          <li><button id="theme-toggle">🌙</button></li>
         </ul>
       </nav>
     </header>

@@ -11,6 +11,20 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-TCT97QXVXG"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-TCT97QXVXG");
+  </script>
   <body>
     <header>
       <nav>
@@ -21,7 +35,6 @@
             <a href="profile.html" id="profile-link" class="hidden">Profile</a>
           </li>
           <li><button id="auth-button">Login</button></li>
-          <li><button id="theme-toggle">🌙</button></li>
         </ul>
       </nav>
     </header>
@@ -31,7 +44,17 @@
       <p>Customize your experience in the Grand Archive.</p>
 
       <section class="settings-section">
-        <h2>Audio</h2>
+        <h2>Appearance & Audio</h2>
+        <div class="setting-item">
+          <label for="theme-toggle">Theme (Light/Dark)</label>
+          <label class="switch">
+            <input type="checkbox" id="theme-toggle" />
+            <span class="slider round">
+              <i class="fas fa-sun icon-off"></i>
+              <i class="fas fa-moon icon-on"></i>
+            </span>
+          </label>
+        </div>
         <div class="setting-item">
           <label for="audio-toggle">Enable Sound Effects</label>
           <label class="switch">

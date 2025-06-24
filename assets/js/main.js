@@ -43,15 +43,28 @@ authButton.addEventListener("click", () => {
 });
 
 // Listen for auth state changes
-onAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, async (user) => {
   if (user) {
     // User is signed in
     authButton.textContent = "Logout";
     profileLink.classList.remove("hidden");
+
+    const userRef = doc(db, "users", user.uid);
+    const docSnap = await getDoc(userRef);
+    if (docSnap.exists() && docSnap.data().settings) {
+      const settings = docSnap.data().settings;
+      document.body.classList.toggle("night-mode", settings.theme === "dark");
+      document.body.dataset.audio = settings.audioEnabled;
+    }
   } else {
     // User is signed out
     authButton.textContent = "Login with Google";
     profileLink.classList.add("hidden");
+    document.body.classList.toggle(
+      "night-mode",
+      localStorage.getItem("theme") === "dark"
+    );
+    document.body.dataset.audio = localStorage.getItem("audioEnabled");
   }
 });
 
