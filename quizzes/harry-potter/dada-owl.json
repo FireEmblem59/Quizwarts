@@ -1,0 +1,268 @@
+{
+  "title": "Defence Against the Dark Arts O.W.L.",
+  "category": "Harry Potter",
+  "difficulty": "O.W.L.",
+  "timeLimit": 1500,
+  "questions": [
+    {
+      "question": "What is the incantation to repel a Boggart?",
+      "options": [
+        "Expecto Patronum",
+        "Riddikulus",
+        "Serpensortia",
+        "Immobulus"
+      ],
+      "answer": 1,
+      "lore": "The 'Riddikulus' charm requires strong concentration on a humorous form, as laughter is the most effective weapon against a Boggart."
+    },
+    {
+      "question": "The Patronus Charm is primarily used to defend against which dark creature?",
+      "options": [
+        "Dementors and Lethifolds",
+        "Werewolves",
+        "Inferi",
+        "Boggarts"
+      ],
+      "answer": 0,
+      "lore": "A corporeal Patronus, formed from a powerful, happy memory, acts as a shield and is the only known defence against Dementors."
+    },
+    {
+      "question": "Which of the following is NOT one of the three Unforgivable Curses?",
+      "options": [
+        "Cruciatus Curse (Crucio)",
+        "Imperius Curse (Imperio)",
+        "Killing Curse (Avada Kedavra)",
+        "Confringo Curse (Confringo)"
+      ],
+      "answer": 3,
+      "lore": "The Confringo curse causes an object to explode. The use of any of the three Unforgivable Curses on a human carries a life sentence in Azkaban."
+    },
+    {
+      "question": "What is the most effective way to subdue a Grindylow underwater?",
+      "options": [
+        "Tickling it",
+        "The Revulsion Jinx",
+        "Shining a bright light",
+        "Singing loudly"
+      ],
+      "answer": 1,
+      "lore": "The Revulsion Jinx ('Relashio') shoots hot sparks or boiling water, which is particularly effective at forcing a Grindylow to release its grip."
+    },
+    {
+      "question": "A Red Cap is a dwarf-like creature that lurks where?",
+      "options": [
+        "In the dungeons of old castles",
+        "In dark forests",
+        "In stagnant ponds",
+        "On battlefields where blood has been shed"
+      ],
+      "answer": 3,
+      "lore": "Red Caps are dangerous creatures that bludgeon their victims to death and can be repelled by beauty and charms that cause them pain."
+    },
+    {
+      "question": "The Disarming Charm, 'Expelliarmus', is the signature spell of which famous wizard?",
+      "options": [
+        "Albus Dumbledore",
+        "Gellert Grindelwald",
+        "Harry Potter",
+        "Lord Voldemort"
+      ],
+      "answer": 2,
+      "lore": "Harry Potter's frequent and effective use of this non-lethal spell became so well-known that Death Eaters could identify him by its use alone."
+    },
+    {
+      "question": "How does one distinguish a werewolf from a true wolf?",
+      "options": [
+        "The pupils of its eyes",
+        "The length of its snout",
+        "The tuft on its tail",
+        "All of the above"
+      ],
+      "answer": 3,
+      "lore": "Professor Lupin taught that several subtle physical differences, including shorter snouts and more human-like eyes, can distinguish a werewolf in its wolf form."
+    },
+    {
+      "question": "The Kappa, a Japanese water demon, can be placated by what action?",
+      "options": [
+        "Giving it a cucumber with a human's name carved into it",
+        "Singing it a lullaby",
+        "Offering it a shiny object",
+        "Ignoring it completely"
+      ],
+      "answer": 0,
+      "lore": "This peculiar method forces the Kappa to bow, causing the water held in the indentation on its head to spill out, draining it of its strength."
+    },
+    {
+      "question": "Which jinx is used to bind an opponent's legs together?",
+      "options": [
+        "Locomotor Mortis",
+        "Petrificus Totalus",
+        "Tarantallegra",
+        "Impedimenta"
+      ],
+      "answer": 0,
+      "lore": "The Leg-Locker Curse is a simple but effective jinx taught to first-years to incapacitate an opponent in a duel."
+    },
+    {
+      "question": "What is the only known antidote to Basilisk venom?",
+      "options": [
+        "Phoenix tears",
+        "A bezoar",
+        "Powdered unicorn horn",
+        "The blood of a unicorn"
+      ],
+      "answer": 0,
+      "lore": "Phoenix tears have immense healing properties, capable of reviving a person from the brink of death and neutralizing even the most potent magical venoms."
+    },
+    {
+      "question": "The Full Body-Bind Curse has what incantation?",
+      "options": [
+        "Immobulus",
+        "Carpe Retractum",
+        "Petrificus Totalus",
+        "Stupefy"
+      ],
+      "answer": 2,
+      "lore": "This curse paralyzes the victim, making their limbs snap together. It was famously used by Hermione on Neville in their first year."
+    },
+    {
+      "question": "A Hinkypunk is a creature that appears as a wisp of smoke and does what to lure travelers into bogs?",
+      "options": [
+        "Mimics the sound of a crying baby",
+        "Appears as a lantern to guide them",
+        "Sings a hypnotic melody",
+        "Creates a convincing illusion of solid ground"
+      ],
+      "answer": 1,
+      "lore": "This one-legged creature uses a flickering light to trick the unwary into straying from the path and becoming stuck in the mire."
+    },
+    {
+      "question": "What is the primary purpose of the 'Homenum Revelio' spell?",
+      "options": [
+        "To reveal human presence in the vicinity",
+        "To force a person to reveal their secrets",
+        "To reveal hidden passages",
+        "To identify a person under the Polyjuice Potion"
+      ],
+      "answer": 0,
+      "lore": "This spell reveals the presence of other humans, making it an excellent tool for checking if a supposedly empty room is truly secure."
+    },
+    {
+      "question": "Inferi are corpses reanimated by a dark wizard. What are they most vulnerable to?",
+      "options": ["Sunlight", "Running water", "Fire and heat", "Loud noises"],
+      "answer": 2,
+      "lore": "As creatures of darkness and cold, Inferi have a magical aversion to warmth and light, making fire the most potent weapon against them."
+    },
+    {
+      "question": "The Stunning Spell, 'Stupefy', renders a person unconscious. What is the counter-spell?",
+      "options": ["Rennervate", "Enervate", "Finite Incantatem", "Revivify"],
+      "answer": 0,
+      "lore": "The incantation was changed from 'Enervate' in later textbook editions to 'Rennervate' to avoid confusion with the verb 'to enervate', meaning to weaken."
+    },
+    {
+      "question": "Which dark object, when worn, brings misfortune and can eventually kill the wearer?",
+      "options": [
+        "The Hand of Glory",
+        "The Black Quill",
+        "The Opal Necklace of Slytherin",
+        "A Horcrux"
+      ],
+      "answer": 2,
+      "lore": "The cursed opal necklace from Borgin and Burkes was responsible for nearly killing Katie Bell and was said to have claimed the lives of nineteen Muggles."
+    },
+    {
+      "question": "The Imperius Curse can be fought and resisted. What personal quality is required to do so?",
+      "options": [
+        "Exceptional intelligence",
+        "Purity of heart",
+        "Great magical power",
+        "Strength of will"
+      ],
+      "answer": 3,
+      "lore": "Resisting the Imperius Curse requires immense mental fortitude and a strong sense of self, a feat few wizards can achieve."
+    },
+    {
+      "question": "What is the effect of the 'Confundus' Charm?",
+      "options": [
+        "To confuse a person or magical object",
+        "To create a loud, confusing noise",
+        "To make the target forget their own name",
+        "To switch two objects' locations"
+      ],
+      "answer": 0,
+      "lore": "The Confundus Charm is a powerful tool for subterfuge, used to fool everything from people to magical artifacts like the Goblet of Fire."
+    },
+    {
+      "question": "A doxy is a small, fairy-like creature with an extra pair of arms and legs. What is their primary defense mechanism?",
+      "options": [
+        "A venomous bite",
+        "A piercing scream",
+        "Spitting poison",
+        "A foul odor"
+      ],
+      "answer": 0,
+      "lore": "Doxies have double rows of sharp, venomous teeth. A bite requires an antidote. They are often mistaken for fairies by the unwary."
+    },
+    {
+      "question": "The 'Everte Statum' spell has what effect on an opponent?",
+      "options": [
+        "It throws them backwards, causing them to somersault",
+        "It turns their legs to jelly",
+        "It causes them to swell up",
+        "It forces them to speak in reverse"
+      ],
+      "answer": 0,
+      "lore": "This spell is a dramatic and forceful dueling spell, used by Draco Malfoy against Harry Potter in the Duelling Club."
+    },
+    {
+      "question": "What is a Horcrux?",
+      "options": [
+        "A powerful magical artifact",
+        "A type of dark potion",
+        "An object in which a wizard has hidden a fragment of their soul",
+        "A creature that guards a wizard's treasure"
+      ],
+      "answer": 2,
+      "lore": "Creating a Horcrux is considered the foulest of dark arts, as it requires splitting one's soul by committing murder, thereby achieving a twisted form of immortality."
+    },
+    {
+      "question": "How do you disarm a 'Secrecy Sensor'?",
+      "options": [
+        "By telling it the truth",
+        "By casting a powerful Confundus Charm on it",
+        "By speaking a password",
+        "It cannot be disarmed, only avoided"
+      ],
+      "answer": 0,
+      "lore": "A Secrecy Sensor vibrates and screeches when it detects concealment and lies. The only way to pacify it is with honesty, making it a nuisance for those with something to hide."
+    },
+    {
+      "question": "The Shield Charm ('Protego') can be strengthened into more powerful versions. Which of these is a large, stationary shield for a wide area?",
+      "options": [
+        "Protego Maxima",
+        "Protego Horribilis",
+        "Protego Duo",
+        "Protego Totalum"
+      ],
+      "answer": 3,
+      "lore": "'Protego Totalum', when combined with other protective enchantments like 'Salvio Hexia', can create a highly effective safe zone."
+    },
+    {
+      "question": "What is the name for the type of magic that involves self-transfiguration into an animal?",
+      "options": ["Metamorphmagus", "Animagus", "Lycanthropy", "Therianthropy"],
+      "answer": 1,
+      "lore": "Becoming an Animagus is a difficult and lengthy process that requires Ministry registration. A Metamorphmagus, by contrast, is born with the ability to change their appearance at will."
+    },
+    {
+      "question": "A 'Dungbomb' is primarily designed to do what?",
+      "options": [
+        "Cause a small, magical explosion",
+        "Create a powerful, distracting, and foul smell",
+        "Cover the target in dung",
+        "Attract dung beetles"
+      ],
+      "answer": 1,
+      "lore": "Though considered a prank item, Dungbombs can be an effective diversionary tactic in a pinch, as their overwhelming stench can disorient an opponent."
+    }
+  ]
+}

@@ -1,0 +1,233 @@
+{
+  "title": "Astronomy O.W.L.",
+  "category": "Harry Potter",
+  "difficulty": "O.W.L.",
+  "timeLimit": 1500,
+  "questions": [
+    {
+      "question": "Which is the brightest star in the night sky, also known as the 'Dog Star'?",
+      "options": ["Sirius", "Polaris", "Betelgeuse", "Vega"],
+      "answer": 0,
+      "lore": "Sirius is part of the constellation Canis Major (The Great Dog). Its name holds significance for the wizard Sirius Black, whose Animagus form is a large black dog."
+    },
+    {
+      "question": "The moons of which planet are known to be particularly useful in potion-making?",
+      "options": ["Jupiter", "Saturn", "Mars", "Neptune"],
+      "answer": 2,
+      "lore": "The dust from the moons of Mars, Phobos and Deimos, is said to have magical properties that can enhance the effects of certain brews when harvested correctly."
+    },
+    {
+      "question": "From which tower at Hogwarts are Astronomy lessons traditionally held?",
+      "options": [
+        "The North Tower",
+        "Gryffindor Tower",
+        "The Astronomy Tower",
+        "The West Tower"
+      ],
+      "answer": 2,
+      "lore": "The Astronomy Tower is the tallest tower at Hogwarts, offering the best, unobstructed view of the night sky for star-charting and practical exams."
+    },
+    {
+      "question": "The constellation 'Draco' is depicted as what creature?",
+      "options": ["A Dragon", "A Snake", "A Lion", "A Griffin"],
+      "answer": 0,
+      "lore": "The Draco constellation is one of the largest in the northern sky. It is also the source of the name for the Malfoy family scion, Draco."
+    },
+    {
+      "question": "What is a 'Crescent Moon'?",
+      "options": [
+        "A full moon partially obscured by clouds",
+        "The phase of the moon when it is less than half full",
+        "The moon during a lunar eclipse",
+        "A moon that is shaped like a banana"
+      ],
+      "answer": 1,
+      "lore": "The crescent phase occurs just after the new moon and just before the old moon. Some magical plants, like Fluxweed, must be harvested during specific lunar phases."
+    },
+    {
+      "question": "The planet Venus is often referred to as the:",
+      "options": [
+        "Morning Star or Evening Star",
+        "Red Planet",
+        "Wanderer",
+        "Ice Giant"
+      ],
+      "answer": 0,
+      "lore": "Because of its brightness and visibility just before sunrise or just after sunset, Venus holds a special place in both Muggle and wizarding astronomy."
+    },
+    {
+      "question": "What is the primary tool used by students for their practical Astronomy exams?",
+      "options": [
+        "A sextant",
+        "An astrolabe",
+        "A brass telescope",
+        "A crystal ball"
+      ],
+      "answer": 2,
+      "lore": "Students are required to own a telescope for charting the stars. For the O.W.L. exam, they must fill in a blank star chart based on their observations."
+    },
+    {
+      "question": "A lunar eclipse occurs when which celestial body passes directly behind the Earth?",
+      "options": ["The Sun", "The Moon", "Mars", "A comet"],
+      "answer": 1,
+      "lore": "During a total lunar eclipse, the Earth completely blocks direct sunlight from reaching the Moon, often giving it a reddish hue known as a 'blood moon'."
+    },
+    {
+      "question": "The constellation 'Orion' is easily identifiable by what feature?",
+      "options": [
+        "A bright, red star at its shoulder",
+        "A belt of three bright stars",
+        "Its 'W' shape",
+        "Its proximity to the North Star"
+      ],
+      "answer": 1,
+      "lore": "Orion's Belt is one of the most recognizable asterisms in the night sky. The red supergiant, Betelgeuse, forms one of Orion's shoulders."
+    },
+    {
+      "question": "Which of Jupiter's moons is known for its many active volcanoes?",
+      "options": ["Europa", "Ganymede", "Callisto", "Io"],
+      "answer": 3,
+      "lore": "The constant volcanic activity on Io makes its surface a chaotic landscape of sulfur deposits, and its magical energy is considered highly unstable."
+    },
+    {
+      "question": "What is the term for a star that suddenly increases greatly in brightness, then slowly fades back to its original state?",
+      "options": ["A Supernova", "A Pulsar", "A Nova", "A Quasar"],
+      "answer": 2,
+      "lore": "A nova is a cataclysmic nuclear explosion on a white dwarf star. A supernova, by contrast, is a much larger explosion that results in the star's destruction."
+    },
+    {
+      "question": "The North Star, Polaris, is useful for navigation because:",
+      "options": [
+        "It is the brightest star in the sky",
+        "It remains in a fixed position in the sky",
+        "It changes colour throughout the night",
+        "It is only visible in winter"
+      ],
+      "answer": 1,
+      "lore": "Polaris is located almost directly above the Earth's North Pole, so it appears stationary while other stars revolve around it, making it a reliable celestial marker."
+    },
+    {
+      "question": "What is a nebula?",
+      "options": [
+        "A giant cloud of dust and gas in space",
+        "A cluster of very old stars",
+        "A galaxy in its early stages of formation",
+        "The remnant of an exploded star"
+      ],
+      "answer": 0,
+      "lore": "Nebulae are often called 'stellar nurseries' because they are the regions where new stars are born from collapsing clouds of gas and dust."
+    },
+    {
+      "question": "The 'Summer Triangle' is an astronomical asterism formed by which three bright stars?",
+      "options": [
+        "Vega, Deneb, and Altair",
+        "Sirius, Procyon, and Betelgeuse",
+        "Polaris, Kochab, and Pherkad",
+        "Rigel, Aldebaran, and Capella"
+      ],
+      "answer": 0,
+      "lore": "This prominent asterism is visible in the summer night sky of the Northern Hemisphere, with each star being the brightest in its own constellation."
+    },
+    {
+      "question": "What is the difference between a meteor and a meteorite?",
+      "options": [
+        "A meteor burns up in the atmosphere, a meteorite lands on Earth",
+        "A meteorite is larger than a meteor",
+        "Meteors are made of ice, meteorites are made of rock",
+        "There is no difference"
+      ],
+      "answer": 0,
+      "lore": "A meteoroid is the object in space. It becomes a meteor (or shooting star) when it enters the atmosphere, and a meteorite if any part of it survives the journey to the ground."
+    },
+    {
+      "question": "Which constellation represents a centaur, a creature well-versed in astronomy?",
+      "options": ["Sagittarius", "Centaurus", "Chiron", "Both A and B"],
+      "answer": 3,
+      "lore": "Both Sagittarius and Centaurus depict centaurs. The centaur Firenze, who taught at Hogwarts, was a master of divination through stargazing."
+    },
+    {
+      "question": "The movement of which planet is said to have the greatest influence on divination?",
+      "options": [
+        "Mars, governing conflict",
+        "Venus, governing love",
+        "Mercury, governing intellect",
+        "Saturn, governing fate and limitations"
+      ],
+      "answer": 3,
+      "lore": "In classical astrology, Saturn is considered the great 'teacher' and its position is believed to heavily influence long-term destiny and major life events."
+    },
+    {
+      "question": "An 'occultation' occurs when:",
+      "options": [
+        "A planet aligns with a star",
+        "An object is hidden by another object passing in front of it",
+        "A star goes supernova",
+        "A new moon is observed"
+      ],
+      "answer": 1,
+      "lore": "A common example is when the Moon passes in front of a distant star or planet, temporarily blocking it from view."
+    },
+    {
+      "question": "The rings of Saturn are primarily composed of what?",
+      "options": [
+        "Gas and dust",
+        "Solid rock",
+        "Ice particles and rocky debris",
+        "Magical energy fields"
+      ],
+      "answer": 2,
+      "lore": "The countless particles that form Saturn's rings range in size from tiny specks of dust to objects as large as a mountain."
+    },
+    {
+      "question": "What does the term 'syzygy' refer to in astronomy?",
+      "options": [
+        "A spiral galaxy",
+        "The straight-line configuration of three celestial bodies",
+        "The wobble of a planet on its axis",
+        "The orbit of a comet"
+      ],
+      "answer": 1,
+      "lore": "A common syzygy involves the Sun, Earth, and either the Moon or a planet. Solar and lunar eclipses are types of syzygy."
+    },
+    {
+      "question": "The constellation 'Lyra' is associated with what musical instrument?",
+      "options": ["A harp", "A lyre", "A flute", "A drum"],
+      "answer": 1,
+      "lore": "Lyra represents the lyre of Orpheus from Greek mythology. Its brightest star is Vega."
+    },
+    {
+      "question": "What is the 'zodiac'?",
+      "options": [
+        "A belt of stars in the sky where all constellations are located",
+        "A specific group of 12 powerful stars",
+        "The area of the sky through which the Sun, Moon, and planets appear to pass",
+        "An ancient astronomical chart"
+      ],
+      "answer": 2,
+      "lore": "The zodiacal constellations are those that lie along the apparent path of the Sun, and they are central to both astronomy and astrology."
+    },
+    {
+      "question": "Which of these is NOT a phase of the Moon?",
+      "options": ["Gibbous", "Crescent", "New Moon", "Shadow Moon"],
+      "answer": 3,
+      "lore": "The phases of the moon are New, Waxing Crescent, First Quarter, Waxing Gibbous, Full, Waning Gibbous, Third Quarter, and Waning Crescent. 'Shadow Moon' is not a standard term."
+    },
+    {
+      "question": "The 'Sea of Tranquility' (Mare Tranquillitatis) is a famous location on what celestial body?",
+      "options": ["Mars", "Europa", "The Moon", "Venus"],
+      "answer": 2,
+      "lore": "This lunar mare is most famous for being the landing site of the first Muggles on the Moon in 1969, an event that caused considerable discussion at the Ministry."
+    },
+    {
+      "question": "Why is it often difficult to observe Mercury?",
+      "options": [
+        "It is very small",
+        "It is obscured by dust clouds",
+        "It is very close to the Sun",
+        "It moves too quickly"
+      ],
+      "answer": 2,
+      "lore": "Because of its proximity to the Sun, Mercury is often lost in the Sun's glare and is only visible for short periods during twilight."
+    }
+  ]
+}

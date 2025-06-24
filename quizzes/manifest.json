@@ -3,21 +3,63 @@
     {
       "id": "potions-owl",
       "title": "Potions O.W.L.",
-      "description": "Test your knowledge of potions and their properties.",
+      "description": "A comprehensive exam on the art and science of potion-making. Do you have what it takes?",
       "category": "Harry Potter",
       "filePath": "harry-potter/potions-owl.json"
     },
     {
+      "id": "charms-owl",
+      "title": "Charms O.W.L.",
+      "description": "Test your knowledge of spell-casting, incantations, and the subtle art of charm-work.",
+      "category": "Harry Potter",
+      "filePath": "harry-potter/charms-owl.json"
+    },
+    {
+      "id": "transfiguration-owl",
+      "title": "Transfiguration O.W.L.",
+      "description": "From switching spells to human transfiguration, this exam covers the most scientific of magical disciplines.",
+      "category": "Harry Potter",
+      "filePath": "harry-potter/transfiguration-owl.json"
+    },
+    {
+      "id": "dada-owl",
+      "title": "Defence Against the Dark Arts O.W.L.",
+      "description": "Confront Boggarts, duel with dark creatures, and prove your ability to defend yourself and others.",
+      "category": "Harry Potter",
+      "filePath": "harry-potter/dada-owl.json"
+    },
+    {
+      "id": "history-of-magic-owl",
+      "title": "History of Magic O.W.L.",
+      "description": "Do you know your Goblin Rebellions from your Werewolf Codes of Conduct? An exam for the historically inclined.",
+      "category": "Harry Potter",
+      "filePath": "harry-potter/history-of-magic-owl.json"
+    },
+    {
+      "id": "herbology-owl",
+      "title": "Herbology O.W.L.",
+      "description": "Identify dangerous and magical flora, from the Venomous Tentacula to the Screaming Mandrake.",
+      "category": "Harry Potter",
+      "filePath": "harry-potter/herbology-owl.json"
+    },
+    {
+      "id": "astronomy-owl",
+      "title": "Astronomy O.W.L.",
+      "description": "Map the stars, identify constellations, and understand the movements of celestial bodies from the highest tower.",
+      "category": "Harry Potter",
+      "filePath": "harry-potter/astronomy-owl.json"
+    },
+    {
       "id": "sorting-hat",
-      "title": "Sorting Hat",
-      "description": "Discover your true Hogwarts House.",
+      "title": "The Sorting Hat",
+      "description": "This is not an exam, but a journey of self-discovery. Let the Sorting Hat reveal your true Hogwarts House.",
       "category": "Harry Potter",
       "filePath": "harry-potter/sorting-hat.json"
     },
     {
       "id": "jedi-trials",
       "title": "Jedi Trials",
-      "description": "Is the Force strong with you?",
+      "description": "Is the Force strong with you? Test your knowledge of the Jedi Code, lightsaber forms, and the ways of the Force.",
       "category": "Star Wars",
       "filePath": "star-wars/jedi-trials.json"
     }

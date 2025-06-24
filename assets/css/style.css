@@ -302,6 +302,13 @@ nav ul button:hover {
   background-color: grey;
   cursor: not-allowed;
 }
+
+#timer {
+  display: inline-block;
+  width: 8ch;
+  text-align: center;
+}
+
 .results-actions {
   display: flex;
   justify-content: center;
@@ -424,6 +431,14 @@ nav ul button:hover {
 #leaderboard-table tr:last-child td {
   border-bottom: none;
 }
+
+.time-cell {
+  font-size: 0.9em;
+  color: var(--text-color);
+  opacity: 0.7;
+  text-align: right;
+}
+
 .player-cell {
   display: flex;
   align-items: center;

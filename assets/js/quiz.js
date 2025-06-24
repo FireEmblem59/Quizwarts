@@ -196,25 +196,31 @@ function shuffleArray(array) {
 }
 
 async function endQuiz() {
+  // --- STEP 1: STOP THE TIMER & CALCULATE TIME TAKEN ---
   clearInterval(timer);
+  const totalTime = currentQuizData.timeLimit;
+  const timeTaken = totalTime - timeLeft; // Calculate how long the user took
+
   quizContainer.classList.add("hidden");
   resultsContainer.classList.remove("hidden");
 
+  // Define other key variables
   const totalQuestions = currentQuizData.questions.length;
   const xpEarned = score * 10;
   const quizId = new URLSearchParams(window.location.search).get("id");
 
   // Render initial results HTML
   resultsContainer.innerHTML = `
-      <h2>Quiz Complete!</h2>
-      <p>Your Score: <span id="final-score">${score} / ${totalQuestions}</span></p>
-      <p>XP Earned: <span id="xp-earned">${xpEarned}</span></p>
-      <div class="results-actions">
-          <a href="quiz.html?id=${quizId}" class="cta-button">Try Again</a>
-          <a href="leaderboard.html?id=${quizId}" class="cta-button" id="leaderboard-result-btn">View Leaderboard</a>
-          <a href="index.html" class="cta-button">Choose Another Quiz</a>
-      </div>
-    `;
+        <h2>Quiz Complete!</h2>
+        <p>Your Score: <span id="final-score">${score} / ${totalQuestions}</span></p>
+        <p>Time Taken: <span>${timeTaken} seconds</span></p>
+        <p>XP Earned: <span id="xp-earned">${xpEarned}</span></p>
+        <div class="results-actions">
+            <a href="quiz.html?id=${quizId}" class="cta-button">Try Again</a>
+            <a href="leaderboard.html?id=${quizId}" class="cta-button" id="leaderboard-result-btn">View Leaderboard</a>
+            <a href="index.html" class="cta-button">Choose Another Quiz</a>
+        </div>
+      `;
 
   const user = auth.currentUser;
   if (user) {
@@ -229,51 +235,65 @@ async function endQuiz() {
     const userDoc = await getDoc(userRef);
     const userData = userDoc.data();
 
-    let isFirstTime = !userData.quizHistory || !userData.quizHistory[quizId];
-
-    if (isFirstTime) {
-      console.log(
-        "First time playing this quiz. Awarding XP and posting to leaderboard."
-      );
-
-      // XP & Level up logic
+    // Check if it's the first time playing this quiz for XP purposes
+    if (!userData.quizHistory || !userData.quizHistory[quizId]) {
+      // Award XP & handle level up logic
       const oldLevel = Math.floor(userData.xp / 100) + 1;
       const newLevel = Math.floor((userData.xp + xpEarned) / 100) + 1;
       if (newLevel > oldLevel) {
         localStorage.setItem("levelUp", "true");
       }
-
       await updateDoc(userRef, { xp: increment(xpEarned) });
-
-      // Save to leaderboard
-      const leaderboardRef = doc(
-        db,
-        "leaderboards",
-        quizId,
-        "scores",
-        user.uid
-      );
-      await setDoc(leaderboardRef, {
-        score: score,
-        displayName: user.displayName,
-        photoURL: user.photoURL,
-        uid: user.uid,
-        timestamp: new Date(),
-      });
     } else {
-      console.log("Quiz already played. No XP or leaderboard update.");
       const xpElement = document.getElementById("xp-earned");
       if (xpElement) {
         xpElement.innerHTML = `${xpEarned} (XP only awarded on first completion)`;
       }
     }
 
-    // Award badges and update history
+    // --- STEP 2: LEADERBOARD UPDATE LOGIC ---
+    const leaderboardRef = doc(db, "leaderboards", quizId, "scores", user.uid);
+    const leaderboardSnap = await getDoc(leaderboardRef);
+
+    let shouldUpdateLeaderboard = true; // Assume we should update by default
+
+    if (leaderboardSnap.exists()) {
+      const existingScoreData = leaderboardSnap.data();
+      // Check if the old score is better than the new score
+      if (existingScoreData.score > score) {
+        shouldUpdateLeaderboard = false;
+      }
+      // If scores are the same, check if the old time was faster (better)
+      else if (
+        existingScoreData.score === score &&
+        existingScoreData.timeTaken < timeTaken
+      ) {
+        shouldUpdateLeaderboard = false;
+      }
+    }
+
+    // Only update the leaderboard if the new score is better
+    if (shouldUpdateLeaderboard) {
+      console.log("New high score! Updating leaderboard.");
+      await setDoc(leaderboardRef, {
+        score: score,
+        timeTaken: timeTaken, // Save the time taken
+        displayName: user.displayName,
+        photoURL: user.photoURL,
+        uid: user.uid,
+        timestamp: new Date(),
+      });
+    } else {
+      console.log("Previous score was better. Not updating leaderboard.");
+    }
+
+    // Award badges and update history (these run every time)
     await checkAndAwardBadges(userRef, userData, quizId, score, totalQuestions);
     await updateDoc(userRef, {
       [`quizHistory.${quizId}`]: {
         score: score,
         total: totalQuestions,
+        timeTaken: timeTaken, // Also save time taken to user's history
         date: new Date(),
       },
     });

@@ -1,0 +1,278 @@
+{
+  "title": "Herbology O.W.L.",
+  "category": "Harry Potter",
+  "difficulty": "O.W.L.",
+  "timeLimit": 1500,
+  "questions": [
+    {
+      "question": "What is the primary danger of a mature Mandrake?",
+      "options": [
+        "Its bite is venomous",
+        "Its cry is fatal to anyone who hears it",
+        "Its roots can constrict a person",
+        "It sprays a poisonous pollen"
+      ],
+      "answer": 1,
+      "lore": "Earmuffs are essential when handling mature Mandrakes. The cry of an adolescent Mandrake will only knock a person out for several hours."
+    },
+    {
+      "question": "Devil's Snare is a plant that strangles its victims. It is particularly vulnerable to what?",
+      "options": [
+        "Loud noises",
+        "Cold temperatures",
+        "Bright light and fire",
+        "Running water"
+      ],
+      "answer": 2,
+      "lore": "This plant thrives in dark, damp places. As Hermione Granger recalled, 'Devil's Snare, Devil's Snare, it's deadly fun, but will sulk in the sun!'"
+    },
+    {
+      "question": "Gillyweed, when eaten, allows a person to do what?",
+      "options": [
+        "Breathe underwater",
+        "Speak to fish",
+        "Survive extreme cold",
+        "Understand any language"
+      ],
+      "answer": 0,
+      "lore": "When eaten, Gillyweed causes the consumer to grow gills and webbing on their hands and feet, enabling them to breathe and navigate underwater for about an hour."
+    },
+    {
+      "question": "The pimples on a Bubotuber contain a thick, yellowish-green pus. What is its primary property?",
+      "options": [
+        "It is a powerful cleaning agent",
+        "It is an effective treatment for stubborn acne",
+        "It is highly acidic and corrosive",
+        "It acts as a truth serum"
+      ],
+      "answer": 1,
+      "lore": "The pus of a Bubotuber, despite its foul smell, is a key ingredient in many potions for curing blemishes, though undiluted pus can cause skin irritation."
+    },
+    {
+      "question": "The Venomous Tentacula is a dangerous plant with mobile vines. What is its most valuable byproduct?",
+      "options": [
+        "Its leaves, used in potions",
+        "Its seeds, which are Class C Non-Tradeable",
+        "Its nectar, which is a powerful healing agent",
+        "Its bark, used for wand cores"
+      ],
+      "answer": 1,
+      "lore": "The seeds of a Venomous Tentacula are sought after for dark potions, making their trade heavily regulated by the Ministry of Magic."
+    },
+    {
+      "question": "What happens when you poke a Mimbulus mimbletonia?",
+      "options": [
+        "It sings loudly",
+        "It releases a shower of sparks",
+        "It squirts Stinksap, a foul-smelling, non-poisonous liquid",
+        "It retracts into its pot"
+      ],
+      "answer": 2,
+      "lore": "Neville Longbottom received one for his fifteenth birthday and demonstrated its defense mechanism on the Hogwarts Express, dousing everyone nearby in Stinksap."
+    },
+    {
+      "question": "Asphodel and wormwood are the key ingredients for which powerful potion?",
+      "options": [
+        "Polyjuice Potion",
+        "Veritaserum",
+        "Felix Felicis",
+        "Draught of Living Death"
+      ],
+      "answer": 3,
+      "lore": "This was the very first question Professor Snape asked Harry Potter, highlighting the symbolic meaning of the plants in Victorian flower language (regret and absence)."
+    },
+    {
+      "question": "Which plant is known to be an effective antidote to the ingestion of Alihotsy leaves?",
+      "options": [
+        "A bezoar",
+        "Dittany",
+        "The Glumbumble",
+        "There is no plant-based antidote"
+      ],
+      "answer": 2,
+      "lore": "The treacle produced by the Glumbumble is known to counteract the hysteria and uncontrollable laughter caused by eating Alihotsy leaves."
+    },
+    {
+      "question": "The leaves of the Dittany plant are a powerful healing agent used for what purpose?",
+      "options": [
+        "To regrow bones",
+        "To prevent scarring and heal fresh wounds",
+        "To cure Dragon Pox",
+        "To act as an antidote to most poisons"
+      ],
+      "answer": 1,
+      "lore": "When applied to a fresh wound, essence of Dittany causes the skin to heal over so quickly that it prevents scarring. Hermione used it to heal Ron's splinched arm."
+    },
+    {
+      "question": "A Snargaluff pod appears to be a pulsating, green orb. What is inside it?",
+      "options": [
+        "A large, writhing grub",
+        "A number of large, tuber-like roots",
+        "A sweet, edible nectar",
+        "A puff of poisonous gas"
+      ],
+      "answer": 1,
+      "lore": "These pods are deceptively tough and dangerous, hiding wriggling tubers that are difficult to extract but valuable in certain potions."
+    },
+    {
+      "question": "What is the defining characteristic of a Fanged Geranium?",
+      "options": [
+        "It has sharp teeth",
+        "It spits venom",
+        "Its leaves are poisonous",
+        "It attracts insects with a sweet smell"
+      ],
+      "answer": 0,
+      "lore": "As the name suggests, this magical plant has fangs and can bite, requiring students to handle it with protective dragon-hide gloves."
+    },
+    {
+      "question": "The fruit of the Shrivelfig is a key ingredient in which type of potion?",
+      "options": [
+        "Strength Potions",
+        "Healing Potions",
+        "Shrinking Solutions",
+        "Love Potions"
+      ],
+      "answer": 2,
+      "lore": "The purple fruit of the Shrivelfig must be skinned and diced to be used effectively in a Shrinking Solution."
+    },
+    {
+      "question": "What must one do to a Leaping Toadstool to safely harvest it?",
+      "options": [
+        "Sing to it",
+        "Stun it with a spell",
+        "Water it with mooncalf tears",
+        "Wear earmuffs"
+      ],
+      "answer": 1,
+      "lore": "As their name implies, Leaping Toadstools will attempt to jump away to evade capture, requiring a quick 'Immobulus' charm to secure them."
+    },
+    {
+      "question": "The Whomping Willow was planted on the Hogwarts grounds for what specific purpose?",
+      "options": [
+        "To guard a secret passage to the Shrieking Shack",
+        "As a defense for the castle",
+        "As a Herbology project by Professor Sprout",
+        "To commemorate a fallen student"
+      ],
+      "answer": 0,
+      "lore": "It was planted in the year Remus Lupin arrived at Hogwarts to conceal the tunnel he used to go to the Shrieking Shack during his transformations."
+    },
+    {
+      "question": "What is the primary use for Gurdyroots?",
+      "options": [
+        "As an ingredient in Love Potions",
+        "To ward off Gulping Plimpies",
+        "To make a foul-tasting but effective healing brew",
+        "As a base for most poisons"
+      ],
+      "answer": 1,
+      "lore": "According to Luna Lovegood's father, Xenophilius, an infusion of Gurdyroot is an excellent way to keep Gulping Plimpies at bay."
+    },
+    {
+      "question": "How are Puffapods typically propagated?",
+      "options": [
+        "From seeds",
+        "They explode, scattering their young",
+        "From cuttings",
+        "They are grown in water"
+      ],
+      "answer": 1,
+      "lore": "These magical plants produce large pink pods full of silvery beans. When dropped, the pod bursts open, scattering the beans and planting them."
+    },
+    {
+      "question": "The Screechsnap plant is known to do what when it feels threatened?",
+      "options": [
+        "Wilt and play dead",
+        "Wriggle and squeal loudly",
+        "Release a cloud of sleeping gas",
+        "Bite with its flowers"
+      ],
+      "answer": 1,
+      "lore": "The Screechsnap is a semi-sentient plant that must be quieted with a silencing charm or calming draught before it can be repotted."
+    },
+    {
+      "question": "What is the primary magical property of Moonlace?",
+      "options": [
+        "It only blooms in moonlight and is used in night-vision potions",
+        "It glows in the dark",
+        "It can be woven into strong, magical rope",
+        "It is a key ingredient in Felix Felicis"
+      ],
+      "answer": 0,
+      "lore": "The delicate, silvery flowers of the Moonlace absorb moonlight, and their essence can grant temporary night vision to the drinker of a potion containing them."
+    },
+    {
+      "question": "Which part of the Valerian plant is most commonly used in potion-making?",
+      "options": ["The flowers", "The leaves", "The stem", "The roots"],
+      "answer": 3,
+      "lore": "Valerian roots, when brewed, have powerful calming and soporific properties, making them a key ingredient in potions like the Draught of Peace."
+    },
+    {
+      "question": "What is a major side effect of improperly prepared Wiggentree bark?",
+      "options": [
+        "It causes severe hallucinations",
+        "It can turn a potion poisonous",
+        "It creates a foul, sulfurous smell",
+        "It loses all magical properties"
+      ],
+      "answer": 1,
+      "lore": "While a key ingredient in the healing Wiggenweld Potion, if the bark is not correctly scraped and dried, it can have toxic effects."
+    },
+    {
+      "question": "Aconite, also known as monkshood or wolfsbane, is a key ingredient in which important potion?",
+      "options": [
+        "The Wolfsbane Potion",
+        "Polyjuice Potion",
+        "Veritaserum",
+        "The Draught of Living Death"
+      ],
+      "answer": 0,
+      "lore": "This plant is highly poisonous, but its controlled use is what allows a transformed werewolf to keep their human mind, as seen in the Wolfsbane Potion."
+    },
+    {
+      "question": "What is the purpose of a Self-Fertilising Shrub?",
+      "options": [
+        "It fertilizes itself and nearby plants",
+        "It produces its own soil",
+        "It repels magical pests",
+        "It grows incredibly quickly"
+      ],
+      "answer": 0,
+      "lore": "These useful but sometimes aggressive shrubs are a favorite among Herbologists for their ability to maintain the soil quality of an entire greenhouse."
+    },
+    {
+      "question": "What is the correct way to handle a Flitterbloom?",
+      "options": [
+        "With dragon-hide gloves",
+        "By distracting it with music",
+        "By approaching it from behind",
+        "It is harmless"
+      ],
+      "answer": 2,
+      "lore": "The Flitterbloom is a type of carnivorous plant that appears as an innocent-looking flower to lure in prey, but its tentacles can be avoided by not approaching it head-on."
+    },
+    {
+      "question": "The Bouncing Bulb is a plant that does what?",
+      "options": [
+        "Bounces aggressively towards people",
+        "Produces bouncing fruit",
+        "Has leaves that bounce away spells",
+        "Bounces to absorb sunlight"
+      ],
+      "answer": 0,
+      "lore": "Students in Herbology are often tasked with containing these surprisingly strong and feisty plants, which requires stunning them before they can be repotted."
+    },
+    {
+      "question": "What is the primary difference between a Venomous Tentacula and a regular Tentacula?",
+      "options": [
+        "The colour of their flowers",
+        "The presence of a venomous bite",
+        "The number of tentacles",
+        "There is no such thing as a regular Tentacula"
+      ],
+      "answer": 1,
+      "lore": "While all Tentaculas are dangerous and capable of strangling, the 'Venomous' variety has a distinct, toxic bite that requires a specific antidote."
+    }
+  ]
+}

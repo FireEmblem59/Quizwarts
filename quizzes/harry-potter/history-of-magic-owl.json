@@ -1,0 +1,273 @@
+{
+  "title": "History of Magic O.W.L.",
+  "category": "Harry Potter",
+  "difficulty": "O.W.L.",
+  "timeLimit": 1500,
+  "questions": [
+    {
+      "question": "In what year was the International Statute of Wizarding Secrecy signed?",
+      "options": ["1689", "1707", "1492", "1801"],
+      "answer": 0,
+      "lore": "The Statute was signed to hide the magical community from the non-magical world, following years of persecution and the Salem Witch Trials."
+    },
+    {
+      "question": "Who were the four founders of Hogwarts School of Witchcraft and Wizardry?",
+      "options": [
+        "Gryffindor, Hufflepuff, Ravenclaw, and Slytherin",
+        "Godric, Helga, Rowena, and Salazar",
+        "Merlin, Morgana, Arthur, and Guinevere",
+        "Peverell, Gaunt, Potter, and Black"
+      ],
+      "answer": 1,
+      "lore": "Their full names were Godric Gryffindor, Helga Hufflepuff, Rowena Ravenclaw, and Salazar Slytherin. They founded the school around the 10th century."
+    },
+    {
+      "question": "The Goblin Rebellions of the 17th and 18th centuries were primarily fought over what issue?",
+      "options": [
+        "Wizard control of Gringotts Bank",
+        "The right for goblins to carry wands",
+        "Land ownership disputes",
+        "The creation of the Ministry of Magic"
+      ],
+      "answer": 1,
+      "lore": "The Ministry of Magic's refusal to allow goblins to carry wands, which goblins see as a sign of true partnership, has been a major source of conflict for centuries."
+    },
+    {
+      "question": "Which famous wizard is credited with the creation of the Sorcerer's Stone?",
+      "options": ["Nicolas Flamel", "Albus Dumbledore", "Paracelsus", "Merlin"],
+      "answer": 0,
+      "lore": "Nicolas Flamel was a real-life alchemist. In the wizarding world, he and his wife Perenelle used the Elixir of Life from the stone to live for over 600 years."
+    },
+    {
+      "question": "Uric the Oddball was a medieval wizard known for his extreme eccentricity. What was one of his famous failed experiments?",
+      "options": [
+        "Wearing a jellyfish as a hat",
+        "Trying to prove that a Flobberworm's song was beautiful",
+        "Attempting to fly on a broom with wings",
+        "Brewing a potion to speak with ghosts"
+      ],
+      "answer": 0,
+      "lore": "His bizarre behaviour and failed experiments made him a running joke in the wizarding world, and he is often the answer to history exam questions about eccentricity."
+    },
+    {
+      "question": "What was the primary purpose of the Council of Magical Law, the precursor to the Wizengamot?",
+      "options": [
+        "To create new spells",
+        "To regulate the use of magical creatures",
+        "To create and enforce wizarding laws",
+        "To organize the Triwizard Tournament"
+      ],
+      "answer": 2,
+      "lore": "Established in the 1500s, the Council was the first major attempt to form a centralized government for the British magical community."
+    },
+    {
+      "question": "The Werewolf Code of Conduct, created in 1637, was a failure primarily because:",
+      "options": [
+        "It was too harsh on werewolves",
+        "No werewolves showed up to sign it",
+        "It was vetoed by the Minister for Magic",
+        "Goblins refused to enforce it"
+      ],
+      "answer": 1,
+      "lore": "The Code failed to grasp the nature of lycanthropy, as werewolves could not be expected to register themselves and attend meetings when they lived in fear of persecution."
+    },
+    {
+      "question": "Who was the first Minister for Magic?",
+      "options": [
+        "Ulick Gamp",
+        "Artemisia Lufkin",
+        "Barberus Bragge",
+        "Damocles Rowle"
+      ],
+      "answer": 0,
+      "lore": "Ulick Gamp was the first to hold the title of Minister for Magic, serving from 1707 to 1718. He had previously been the head of the Wizengamot."
+    },
+    {
+      "question": "The introduction of the Golden Snidget into Quidditch games led to the creature's endangerment. What was invented to replace it?",
+      "options": [
+        "The Golden Snitch",
+        "The Quaffle",
+        "The Bludger",
+        "The Seeker position"
+      ],
+      "answer": 0,
+      "lore": "The Golden Snitch was invented by Bowman Wright in the 1300s to mimic the flight patterns of the Snidget, thereby preserving the species."
+    },
+    {
+      "question": "The educational decree that forbade students from possessing 'The Quibbler' was instituted by whom?",
+      "options": [
+        "Cornelius Fudge",
+        "Rufus Scrimgeour",
+        "Pius Thicknesse",
+        "Dolores Umbridge"
+      ],
+      "answer": 3,
+      "lore": "As High Inquisitor of Hogwarts, Dolores Umbridge passed numerous Educational Decrees to assert Ministry control, including banning independent publications."
+    },
+    {
+      "question": "What is the name of the wizarding village that is the only all-wizarding settlement in Britain?",
+      "options": [
+        "Godric's Hollow",
+        "Hogsmeade",
+        "Tinworth",
+        "Ottery St. Catchpole"
+      ],
+      "answer": 1,
+      "lore": "Hogsmeade was founded around the same time as Hogwarts by Hengist of Woodcroft. It is the only settlement in Britain inhabited solely by magical beings."
+    },
+    {
+      "question": "The 1875 ban on Experimental Breeding was put in place to prevent the creation of what?",
+      "options": [
+        "New species of magical creatures",
+        "New types of dark detectors",
+        "More powerful wands",
+        "Unstable potions"
+      ],
+      "answer": 0,
+      "lore": "The ban was enacted after a wizard in the 19th century created the Chimaera, a highly dangerous creature. The creation of the Acromantula is also cited as a reason."
+    },
+    {
+      "question": "Which family in the wizarding world is known for its members' ability of Metamorphmagus?",
+      "options": [
+        "The Black Family",
+        "The Malfoy Family",
+        "The Weasley Family",
+        "The Tonks Family"
+      ],
+      "answer": 0,
+      "lore": "While Nymphadora Tonks is the most famous example, the ability often runs in the Black family line, as seen with her mother, Andromeda Black."
+    },
+    {
+      "question": "The 'Peverell brothers' are the original owners of which legendary artifacts?",
+      "options": [
+        "The Hogwarts House relics",
+        "The Philosopher's Stone",
+        "The Deathly Hallows",
+        "The first racing brooms"
+      ],
+      "answer": 2,
+      "lore": "Antioch, Cadmus, and Ignotus Peverell were the three brothers who, according to legend, received the Elder Wand, Resurrection Stone, and Cloak of Invisibility from Death himself."
+    },
+    {
+      "question": "What event led to the creation of the Department of Magical Accidents and Catastrophes?",
+      "options": [
+        "A dragon being spotted by Muggles in London",
+        "The Goblin Rebellion of 1752",
+        "The collapse of Gringotts",
+        "A massive, accidental release of memory charms"
+      ],
+      "answer": 1,
+      "lore": "The sheer chaos and damage caused by the 1752 Goblin Rebellion necessitated a department dedicated to cleaning up magical messes and modifying Muggle memories."
+    },
+    {
+      "question": "Who is the author of the standard textbook 'A History of Magic'?",
+      "options": [
+        "Adalbert Waffling",
+        "Bathilda Bagshot",
+        "Arsenius Jigger",
+        "Miranda Goshawk"
+      ],
+      "answer": 1,
+      "lore": "Bathilda Bagshot was a renowned magical historian who lived in Godric's Hollow and was a close family friend of the Dumbledores."
+    },
+    {
+      "question": "The concept of a 'Horcrux' was first detailed in which dark arts book?",
+      "options": [
+        "Magick Moste Evile",
+        "Secrets of the Darkest Art",
+        "A Guide to Advanced Transfiguration",
+        "The Grimoire of the Gaunts"
+      ],
+      "answer": 1,
+      "lore": "This vile book was hidden in the restricted section of the Hogwarts library and detailed the process of creating a Horcrux, which Hermione summoned for Tom Riddle's memory."
+    },
+    {
+      "question": "What was the name of the treaty signed at the end of the 1612 Goblin Rebellion?",
+      "options": [
+        "The Gringotts Accord",
+        "The Wand-Wielder's Pact",
+        "The Concordance of 1612",
+        "There was no treaty; the rebellion was crushed"
+      ],
+      "answer": 2,
+      "lore": "The Concordance of 1612, while ending the immediate conflict, failed to address the core issue of wand rights, sowing the seeds for future rebellions."
+    },
+    {
+      "question": "The wizarding holiday of 'Halloween' marks what significant event in modern history?",
+      "options": [
+        "The downfall of Lord Voldemort",
+        "The founding of Hogwarts",
+        "The signing of the Statute of Secrecy",
+        "The end of the Goblin Rebellions"
+      ],
+      "answer": 0,
+      "lore": "October 31st, 1981, is the date that Lord Voldemort's first reign of terror ended when his curse backfired upon attacking the infant Harry Potter."
+    },
+    {
+      "question": "Which Ministry of Magic department is responsible for regulating Quidditch?",
+      "options": [
+        "The Department of Magical Games and Sports",
+        "The Department of Magical Law Enforcement",
+        "The Department of Regulation and Control of Magical Creatures",
+        "The Wizengamot Administration Services"
+      ],
+      "answer": 0,
+      "lore": "This department handles everything from organizing the Quidditch World Cup to regulating the use of flying carpets and other magical forms of transportation."
+    },
+    {
+      "question": "The giant squid that lives in the Hogwarts lake is:",
+      "options": [
+        "A dangerous creature that attacks students",
+        "Semi-sentient and generally peaceful",
+        "An illusion created by the founders",
+        "A transformed Animagus"
+      ],
+      "answer": 1,
+      "lore": "The giant squid has been known to interact peacefully with students, occasionally pushing them back into their boats and even allowing them to tickle its tentacles."
+    },
+    {
+      "question": "In 1926, which major historical event was unfolding in the American wizarding community?",
+      "options": [
+        "The rise of Gellert Grindelwald",
+        "The creation of Ilvermorny School",
+        "The American Revolution",
+        "The repeal of Rappaport's Law"
+      ],
+      "answer": 0,
+      "lore": "Gellert Grindelwald's campaign of terror was reaching its peak in Europe and had begun to spill over into North America, causing widespread fear and political instability."
+    },
+    {
+      "question": "Who was the Headmaster of Hogwarts immediately before Albus Dumbledore?",
+      "options": [
+        "Armando Dippet",
+        "Phineas Nigellus Black",
+        "Dexter Fortescue",
+        "Dilys Derwent"
+      ],
+      "answer": 0,
+      "lore": "Armando Dippet was the Headmaster when Tom Riddle opened the Chamber of Secrets for the first time. Dumbledore took over the role after Dippet retired."
+    },
+    {
+      "question": "The 'Noble and Most Ancient House of Black' had a family motto. What was it?",
+      "options": [
+        "'Always Pure'",
+        "'Toujours Pur'",
+        "'Semper Fidelis'",
+        "'In Unitate, Vis'"
+      ],
+      "answer": 1,
+      "lore": "'Toujours Pur' is French for 'Always Pure', reflecting the family's obsessive pride in their pure-blood status."
+    },
+    {
+      "question": "What significant event in wizarding history occurred in 1473?",
+      "options": [
+        "The first-ever Quidditch World Cup was held",
+        "The Triwizard Tournament was established",
+        "The Ministry of Magic was founded",
+        "The last known dragon was slain in Britain"
+      ],
+      "answer": 0,
+      "lore": "The 1473 Quidditch World Cup is famous for its extreme level of violence, with over seven hundred fouls committed during the final match."
+    }
+  ]
+}

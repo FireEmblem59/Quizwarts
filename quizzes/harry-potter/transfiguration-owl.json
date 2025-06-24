@@ -1,0 +1,253 @@
+{
+  "title": "Transfiguration O.W.L.",
+  "category": "Harry Potter",
+  "difficulty": "O.W.L.",
+  "timeLimit": 1500,
+  "questions": [
+    {
+      "question": "What are the three branches of Transfiguration?",
+      "options": [
+        "Transformation, Vanishment, and Conjuration",
+        "Switching, Mending, and Animating",
+        "Elemental, Biological, and Mechanical",
+        "Formal, Abstract, and Practical"
+      ],
+      "answer": 0,
+      "lore": "These three branches form the core of all Transfiguration theory, covering the changing, disappearing, and appearing of objects."
+    },
+    {
+      "question": "What is the incantation for the Vanishing Spell?",
+      "options": ["Evanesco", "Deletrius", "Vanishio", "Finito"],
+      "answer": 0,
+      "lore": "'Evanesco' is a fifth-year level spell that causes an object to vanish into non-being. It is significantly more difficult than simply making an object invisible."
+    },
+    {
+      "question": "Which of Gamp's Laws of Elemental Transfiguration is the most famous?",
+      "options": [
+        "The First Law: Food cannot be conjured from nothing.",
+        "The Second Law: A subject's weight must be conserved.",
+        "The Third Law: One cannot transfigure a living being into a Horcrux.",
+        "The Fourth Law: Magical substances cannot be transfigured."
+      ],
+      "answer": 0,
+      "lore": "While you can summon, multiply, or transfigure existing food, it is impossible to create it from thin air. This is a fundamental exception in Transfiguration magic."
+    },
+    {
+      "question": "The incantation 'Vera Verto' is used to turn an animal into what object?",
+      "options": ["A teapot", "A button", "A water goblet", "A snuffbox"],
+      "answer": 2,
+      "lore": "This spell was famously taught by Professor McGonagall in second year. A proper 'Vera Verto' results in a crystal-clear goblet."
+    },
+    {
+      "question": "What is the incantation for the Hardening Charm, used to turn objects to stone?",
+      "options": ["Petrificus Totalus", "Solidari", "Duro", "Lapifors"],
+      "answer": 2,
+      "lore": "The 'Duro' charm makes an object hard as stone, effectively turning a tapestry into a solid wall, as seen in the Battle of Hogwarts."
+    },
+    {
+      "question": "The spell 'Lapifors' transfigures a target into what?",
+      "options": ["A rabbit", "A stone statue", "A lapel", "A lily pad"],
+      "answer": 0,
+      "lore": "This spell turns small objects or creatures into a rabbit, a common practice spell for intermediate students."
+    },
+    {
+      "question": "Which of these factors is LEAST important for a successful Transfiguration?",
+      "options": [
+        "Wand power (w)",
+        "Concentration (c)",
+        "The caster's weight (t)",
+        "Vicious intent (v)"
+      ],
+      "answer": 2,
+      "lore": "The Transfiguration formula includes variables for wand power, concentration, and vicious intent, but the caster's own physical weight is irrelevant to the magical calculation."
+    },
+    {
+      "question": "What is the term for a wizard who can change their appearance at will without a wand or potion?",
+      "options": ["Animagus", "Metamorphmagus", "Doppelgänger", "Shapeshifter"],
+      "answer": 1,
+      "lore": "This is an extremely rare, innate magical ability. Nymphadora Tonks is a famous example. It cannot be learned, unlike the Animagus transformation."
+    },
+    {
+      "question": "The 'Avifors' spell transfigures small objects into what?",
+      "options": [
+        "A flock of birds",
+        "A single bird",
+        "A swarm of bees",
+        "A nest of snakes"
+      ],
+      "answer": 1,
+      "lore": "'Avis' conjures a flock of birds, but 'Avifors' is a true transfiguration spell that transforms an object, like a statue, into a bird."
+    },
+    {
+      "question": "What is the primary risk of Human Transfiguration?",
+      "options": [
+        "The transformation can be painful",
+        "The subject can get stuck halfway between forms",
+        "It requires immense magical power",
+        "It is illegal without a license"
+      ],
+      "answer": 1,
+      "lore": "An improper Human Transfiguration can have gruesome results, leaving the subject with features of both their original and intended forms."
+    },
+    {
+      "question": "The incantation 'Draconifors' turns a statue into what?",
+      "options": [
+        "A small, fire-breathing dragon",
+        "A dragon's egg",
+        "A large, immobile dragon",
+        "A dragon-shaped topiary"
+      ],
+      "answer": 0,
+      "lore": "This powerful spell is a test of a wizard's control, as the conjured dragon can be dangerous if not properly managed."
+    },
+    {
+      "question": "What is the name for the branch of magic that deals with transfiguring objects for use in combat?",
+      "options": [
+        "Battle Transfiguration",
+        "Dueling Magic",
+        "Offensive Transfiguration",
+        "Martial Magic"
+      ],
+      "answer": 0,
+      "lore": "Battle Transfiguration is a highly advanced and dangerous field, involving turning the environment into weapons, such as transfiguring desks into charging boars."
+    },
+    {
+      "question": "The incantation 'Incendio' produces fire. How is this different from a conjuration like 'Fiendfyre'?",
+      "options": [
+        "'Incendio' is a charm, not a transfiguration.",
+        "'Incendio' creates normal fire, not cursed, sentient fire.",
+        "'Incendio' is less powerful.",
+        "All of the above."
+      ],
+      "answer": 3,
+      "lore": "While 'Incendio' is a charm that produces fire, it differs from Transfiguration's conjured fire. Cursed fires like Fiendfyre have a life of their own and are nearly impossible to control."
+    },
+    {
+      "question": "The spell to turn a beetle into a button is a standard O.W.L. level exercise. What is the main difficulty?",
+      "options": [
+        "The beetle keeps moving",
+        "Getting the button's size right",
+        "Ensuring the button does not retain any 'beetle-ness'",
+        "Finding a willing beetle"
+      ],
+      "answer": 2,
+      "lore": "A successful transfiguration must be complete. Any remaining 'beetle-ness', like twitching or a faint chittering sound, would result in a failing grade."
+    },
+    {
+      "question": "What is the counter-spell for a Vanishing Spell?",
+      "options": [
+        "Appareo",
+        "Revelo",
+        "Aparecium",
+        "There is no direct counter-spell"
+      ],
+      "answer": 3,
+      "lore": "Once an object has been Vanished, it goes into non-being and cannot simply be brought back. It must be re-conjured or summoned if it exists elsewhere."
+    },
+    {
+      "question": "The Switching Spell causes two objects to exchange their physical forms. What is its incantation?",
+      "options": [
+        "Permuto",
+        "Vice Versa",
+        "Commuto",
+        "The incantation is non-verbal"
+      ],
+      "answer": 3,
+      "lore": "By the O.W.L. level, students are expected to perform simpler spells non-verbally. The Switching Spell is a key test of this skill."
+    },
+    {
+      "question": "Conjuring an object from thin air is known as what?",
+      "options": [
+        "Conjuration ex nihilo",
+        "Apparition",
+        "Summoning",
+        "Materialization"
+      ],
+      "answer": 0,
+      "lore": "'Ex nihilo' is Latin for 'out of nothing'. This is the most difficult form of Conjuration and is a hallmark of a powerful wizard."
+    },
+    {
+      "question": "The spell 'Orchideous' conjures what?",
+      "options": [
+        "A bouquet of flowers",
+        "A flock of birds",
+        "A swarm of orchids",
+        "A single orchid"
+      ],
+      "answer": 0,
+      "lore": "This spell produces a bunch of flowers from the wand's tip. It was famously used by Mr. Ollivander to test Fleur Delacour's wand."
+    },
+    {
+      "question": "When transfiguring a living creature, what is the most important thing to do?",
+      "options": [
+        "Show no fear",
+        "Have a clear picture of the desired outcome in your mind",
+        "Use a powerful wand",
+        "Speak the incantation very clearly"
+      ],
+      "answer": 1,
+      "lore": "Hesitation or a fuzzy mental image is the primary cause of transfiguration accidents. The wizard's will and focus are paramount."
+    },
+    {
+      "question": "The 'Inanimatus Conjurus' spell is a general incantation for what?",
+      "options": [
+        "Conjuring any inanimate object",
+        "Animating an inanimate object",
+        "Vanishing an inanimate object",
+        "It is not a real spell"
+      ],
+      "answer": 0,
+      "lore": "This is the formal, textbook name for the general Conjuring Spell, though most wizards use more specific incantations for what they wish to create."
+    },
+    {
+      "question": "Which of these cannot be produced by transfiguration?",
+      "options": ["Water", "Light", "Love", "Animals"],
+      "answer": 2,
+      "lore": "Like food, strong emotions such as love cannot be created from nothing. Love potions create infatuation, not true love, which is a key distinction in magical law."
+    },
+    {
+      "question": "The 'Fera Verto' spell was supposed to turn an animal into a goblet. In the film, what did Ron's broken wand turn Scabbers into?",
+      "options": [
+        "A goblet with a tail",
+        "A hairy goblet",
+        "A squeaking teacup",
+        "A snuffbox that sneezed"
+      ],
+      "answer": 0,
+      "lore": "This mishap is a perfect example of how a damaged wand can lead to an incomplete and comical transfiguration."
+    },
+    {
+      "question": "What is the primary limitation of Vanishing Spells?",
+      "options": [
+        "They do not work on humans",
+        "They cannot vanish very large objects",
+        "They cannot vanish magical substances",
+        "The more complex the object, the harder it is to vanish"
+      ],
+      "answer": 3,
+      "lore": "Vanishing a simple snail is a fifth-year exercise, but vanishing a complex creature like a kitten is N.E.W.T. level, as one must account for every part of its being."
+    },
+    {
+      "question": "The spell 'Serpensortia' conjures what?",
+      "options": [
+        "A jet of water",
+        "A swarm of serpents",
+        "A single, large snake",
+        "A shield of snakeskin"
+      ],
+      "answer": 2,
+      "lore": "This dark transfiguration conjures a snake from the caster's wand, famously used by Draco Malfoy against Harry, which inadvertently revealed Harry's ability to speak Parseltongue."
+    },
+    {
+      "question": "Untransfiguration is the art of what?",
+      "options": [
+        "Reversing a failed transfiguration",
+        "The formal term for a counter-spell",
+        "Turning an object back to its original state",
+        "A branch of healing magic"
+      ],
+      "answer": 2,
+      "lore": "Untransfiguration is a crucial skill. A wizard must be able to undo their work, turning the goblet back into a rat, for example."
+    }
+  ]
+}

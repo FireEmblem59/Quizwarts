@@ -1,0 +1,248 @@
+{
+  "title": "Charms O.W.L. Exam",
+  "category": "Harry Potter",
+  "difficulty": "O.W.L.",
+  "timeLimit": 1500,
+  "questions": [
+    {
+      "question": "What is the incantation for the Shield Charm?",
+      "options": ["Protego", "Expelliarmus", "Cave Inimicum", "Salvio Hexia"],
+      "answer": 0,
+      "lore": "The Shield Charm, 'Protego', is fundamental for any duelist, creating a temporary magical barrier against minor to moderate spells."
+    },
+    {
+      "question": "The incantation 'Wingardium Leviosa' is used for which charm?",
+      "options": [
+        "The Summoning Charm",
+        "The Levitation Charm",
+        "The Hover Charm",
+        "The Banishing Charm"
+      ],
+      "answer": 1,
+      "lore": "Famously taught in first-year Charms, this charm requires a specific 'swish and flick' wand movement."
+    },
+    {
+      "question": "Which of these is known as the Thief's Friend?",
+      "options": [
+        "A bezoar",
+        "Alohomora",
+        "A Secrecy Sensor",
+        "The Invisibility Cloak"
+      ],
+      "answer": 1,
+      "lore": "The 'Alohomora' charm can unlock most magically sealed doors, though it is ineffective against doors protected by more powerful magic."
+    },
+    {
+      "question": "What is the primary function of the 'Muffliato' charm?",
+      "options": [
+        "To muffle all sound in an area",
+        "To fill the ears of nearby persons with an unidentifiable buzzing",
+        "To amplify one's voice",
+        "To create a soundproof bubble"
+      ],
+      "answer": 1,
+      "lore": "Invented by the Half-Blood Prince, this charm is ideal for holding private conversations without being overheard."
+    },
+    {
+      "question": "The 'Lumos' charm produces light from the caster's wand. What is its counter-charm?",
+      "options": ["Nox", "Silencio", "Colloportus", "Finite Incantatem"],
+      "answer": 0,
+      "lore": "'Nox' is the incantation to extinguish the light produced by the 'Lumos' charm, a simple but essential piece of magic."
+    },
+    {
+      "question": "To repair a pair of broken spectacles, one would use which charm?",
+      "options": ["Reparo", "Episkey", "Reducio", "Scourgify"],
+      "answer": 0,
+      "lore": "'Reparo' is a general mending charm. Hermione Granger notably used it to fix Harry's glasses on the Hogwarts Express."
+    },
+    {
+      "question": "What is the incantation for the Summoning Charm, used to bring an object to the caster?",
+      "options": ["Accio", "Carpe Retractum", "Expulso", "Relashio"],
+      "answer": 0,
+      "lore": "The Summoning Charm is one of the oldest and most useful spells. The caster must concentrate on the object they wish to summon."
+    },
+    {
+      "question": "The charm 'Aguamenti' produces what?",
+      "options": [
+        "A jet of clean, drinkable water",
+        "A gust of wind",
+        "A shower of sparks",
+        "A rope of light"
+      ],
+      "answer": 0,
+      "lore": "This charm is invaluable for extinguishing fires or providing a source of water in emergencies."
+    },
+    {
+      "question": "Which charm would you use to clean an object or area?",
+      "options": ["Tergeo", "Scourgify", "Evanesco", "Rennervate"],
+      "answer": 1,
+      "lore": "'Scourgify' is a scouring charm, perfect for cleaning everything from dirty cauldrons to owl cages."
+    },
+    {
+      "question": "What is the effect of the 'Silencio' charm?",
+      "options": [
+        "It makes an object invisible",
+        "It magically silences a creature or person",
+        "It absorbs all nearby sound",
+        "It causes deafness in the target"
+      ],
+      "answer": 1,
+      "lore": "The Silencing Charm renders the target mute. It was a required spell for the fifth-year O.W.L. practical exam."
+    },
+    {
+      "question": "The incantation 'Diffindo' is used for what purpose?",
+      "options": [
+        "To sever or cut an object",
+        "To duplicate an object",
+        "To mend a torn object",
+        "To make an object heavier"
+      ],
+      "answer": 0,
+      "lore": "The Severing Charm is precise but can be dangerous if used carelessly, as it can cause injury."
+    },
+    {
+      "question": "Which of these is the incantation for the Cheering Charm?",
+      "options": [
+        "Felixempra",
+        "Rictusempra",
+        "Laetifico",
+        "The incantation is non-verbal"
+      ],
+      "answer": 0,
+      "lore": "While the exact incantation 'Felixempra' is debated in some texts, it is widely accepted. Over-charming can lead to hysterical laughter."
+    },
+    {
+      "question": "To protect a specific area from being entered by Muggles, a wizard would use which charm?",
+      "options": [
+        "Cave Inimicum",
+        "The Muggle-Repelling Charm",
+        "Protego Totalum",
+        "Homenum Revelio"
+      ],
+      "answer": 1,
+      "lore": "The Muggle-Repelling Charm ('Repello Muggletum') causes Muggles who approach a protected area to remember a sudden, urgent appointment elsewhere."
+    },
+    {
+      "question": "What is the effect of 'Engorgio'?",
+      "options": [
+        "It causes an object to swell in size",
+        "It creates a large, echoing boom",
+        "It makes the target heavier",
+        "It causes boils to erupt on the skin"
+      ],
+      "answer": 0,
+      "lore": "The Engorgement Charm is the direct opposite of the Shrinking Charm. Its counter-incantation is 'Reducio'."
+    },
+    {
+      "question": "The 'Immobulus' charm is used to:",
+      "options": [
+        "Immobilize living targets",
+        "Make an object unbreakable",
+        "Create an invisible barrier",
+        "Summon a swarm of insects"
+      ],
+      "answer": 0,
+      "lore": "The Freezing Charm stops its target in their tracks. It was effectively used by Hermione to neutralize a swarm of Cornish Pixies."
+    },
+    {
+      "question": "Which charm fills a room with a shower of red and gold sparks?",
+      "options": ["Periculum", "Vermillious", "Incendio", "Relashio"],
+      "answer": 0,
+      "lore": "'Periculum' is used as a magical distress signal, effectively a magical flare gun."
+    },
+    {
+      "question": "The incantation 'Colloportus' is used for what purpose?",
+      "options": [
+        "To magically lock a door",
+        "To blast a door open",
+        "To create a keyhole",
+        "To reinforce a door"
+      ],
+      "answer": 0,
+      "lore": "This charm seals a door with a magical lock that cannot be opened by manual means, though it can be countered by 'Alohomora'."
+    },
+    {
+      "question": "What does the charm 'Rictusempra' do?",
+      "options": [
+        "It causes the target to laugh uncontrollably",
+        "It tickles the target mercilessly",
+        "It creates a small, localized earthquake",
+        "It makes the target break into song"
+      ],
+      "answer": 1,
+      "lore": "The Tickling Charm is a common dueling spell used to distract and incapacitate an opponent without causing serious harm."
+    },
+    {
+      "question": "To slow down a moving target, one would use the:",
+      "options": [
+        "Sticking Charm",
+        "Impediment Jinx",
+        "Freezing Charm",
+        "Slowing Charm"
+      ],
+      "answer": 1,
+      "lore": "The Impediment Jinx ('Impedimenta') is a crucial dueling spell that temporarily slows or halts the target's momentum."
+    },
+    {
+      "question": "The 'Flagrate' charm allows the caster to do what?",
+      "options": [
+        "Draw fiery marks in the air",
+        "Create a flag of a chosen country",
+        "Make an object wave like a flag",
+        "Send a fiery message"
+      ],
+      "answer": 0,
+      "lore": "This charm is useful for marking doors or locations. Hermione used it to mark a door in the Department of Mysteries."
+    },
+    {
+      "question": "What is the incantation for the Four-Point Spell, which makes the wand act as a compass?",
+      "options": ["Point Me", "Oriento", "Diregere", "Quattuor Puncta"],
+      "answer": 0,
+      "lore": "The incantation 'Point Me' causes the caster's wand to point North, a simple but highly effective navigational charm."
+    },
+    {
+      "question": "The charm 'Tarantallegra' forces the victim to do what?",
+      "options": [
+        "Dance uncontrollably",
+        "Scream in terror",
+        "Speak in a different language",
+        "Sprout extra legs like a tarantula"
+      ],
+      "answer": 0,
+      "lore": "This jinx causes the target's legs to twitch and dance wildly, making it impossible for them to stand still or aim properly."
+    },
+    {
+      "question": "Which charm would be most effective at extinguishing a fire caused by dark magic, such as Fiendfyre?",
+      "options": [
+        "Aguamenti",
+        "A standard Extinguishing Charm",
+        "Fianto Duri",
+        "No simple charm is effective"
+      ],
+      "answer": 3,
+      "lore": "Fiendfyre is a cursed fire of immense destructive power that cannot be extinguished by normal magical means; it actively resists being put out."
+    },
+    {
+      "question": "The incantation 'Episkey' is a healing charm used for what?",
+      "options": [
+        "Mending minor injuries like a broken nose or split lip",
+        "Curing major diseases like Dragon Pox",
+        "Regrowing bones",
+        "Reattaching severed limbs"
+      ],
+      "answer": 0,
+      "lore": "Tonks used 'Episkey' to fix Harry's broken nose. It is a simple but useful healing charm for minor physical damage."
+    },
+    {
+      "question": "What is the primary difference between a charm and a transfiguration spell?",
+      "options": [
+        "Charms change what an object does, Transfiguration changes what an object is",
+        "Transfiguration is more powerful than Charms",
+        "Charms are temporary, Transfiguration is permanent",
+        "There is no fundamental difference"
+      ],
+      "answer": 0,
+      "lore": "This is a core concept of magical theory. A charm adds or changes properties (like making a teacup dance), while Transfiguration alters a subject's fundamental nature (like turning a mouse into a snuffbox)."
+    }
+  ]
+}

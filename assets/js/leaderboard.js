@@ -59,7 +59,8 @@ async function fetchAndDisplayLeaderboard(quizId) {
   try {
     const scoresQuery = query(
       collection(db, "leaderboards", quizId, "scores"),
-      orderBy("score", "desc"),
+      orderBy("score", "desc"), // First, order by highest score
+      orderBy("timeTaken", "asc"), // Then, order by lowest (fastest) time
       limit(10)
     );
     const querySnapshot = await getDocs(scoresQuery);
@@ -84,6 +85,7 @@ async function fetchAndDisplayLeaderboard(quizId) {
                 <span>${data.displayName}</span>
             </td>
             <td>${data.score}</td>
+            <td class="time-cell">${data.timeTaken || "-"}s</td>
         </tr>
       `;
       leaderboardBody.innerHTML += row;

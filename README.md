@@ -166,7 +166,7 @@ The `firebaseConfig` is meant to be public. Security is handled by **Firestore R
 ├── 📁 quizzes — All quiz content
 │ ├── 📄 manifest.json — Master list of all quizzes
 │ └── 📁 harry-potter — Category folder
-│ └── 📄 potions-owl.json
+│ └── 📁 star-wars
 │
 └── 📄 README.md — Project documentation
 
