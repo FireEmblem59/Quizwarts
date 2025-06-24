@@ -37,9 +37,7 @@ async function loadUserProfile(uid) {
 
     // Fade-in profile avatar loading
     const avatarImg = document.getElementById("profile-avatar");
-    const avatarUrl =
-      userData.photoURL ||
-      "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AProfile_avatar_placeholder_large.png&psig=AOvVaw30sC0tzX2xXb7E9uyJWVqV&ust=1750810386243000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPi0go3jiI4DFQAAAAAdAAAAABAE";
+    const avatarUrl = userData.photoURL || "assets/images/default-avatar.png";
     avatarImg.classList.remove("loaded");
     avatarImg.onload = () => {
       avatarImg.classList.add("loaded");
@@ -81,6 +79,11 @@ async function loadUserProfile(uid) {
 
       localStorage.removeItem("levelUp");
     }
+
+    const titles = ["Novice", "Apprentice", "Adept", "Master"];
+    const userTitle = titles[Math.min(level - 1, titles.length - 1)];
+    document.getElementById("profile-title").innerHTML =
+      "<strong>Title:</strong> " + userTitle;
 
     // Quiz history
     const historyList = document.getElementById("history-list");

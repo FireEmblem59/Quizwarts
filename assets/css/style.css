@@ -705,3 +705,51 @@ input:checked + .slider .icon-on {
 .cta-button.danger {
   background-color: var(--danger-color);
 }
+
+/* --- 13. User Profile Dropdown --- */
+.user-menu {
+  position: relative;
+}
+
+#profile-menu-container {
+  cursor: pointer;
+}
+
+#profile-menu-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.profile-dropdown-content {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background-color: var(--card-bg-solid);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-dropdown-content a {
+  color: var(--text-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.profile-dropdown-content a:hover {
+  background-color: var(--border-color);
+}
+
+.profile-dropdown-content i {
+  width: 20px;
+  text-align: center;
+}

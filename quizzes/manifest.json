@@ -1,0 +1,25 @@
+{
+  "quizzes": [
+    {
+      "id": "potions-owl",
+      "title": "Potions O.W.L.",
+      "description": "Test your knowledge of potions and their properties.",
+      "category": "Harry Potter",
+      "filePath": "harry-potter/potions-owl.json"
+    },
+    {
+      "id": "sorting-hat",
+      "title": "Sorting Hat",
+      "description": "Discover your true Hogwarts House.",
+      "category": "Harry Potter",
+      "filePath": "harry-potter/sorting-hat.json"
+    },
+    {
+      "id": "jedi-trials",
+      "title": "Jedi Trials",
+      "description": "Is the Force strong with you?",
+      "category": "Star Wars",
+      "filePath": "star-wars/jedi-trials.json"
+    }
+  ]
+}

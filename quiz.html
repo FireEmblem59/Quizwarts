@@ -28,16 +28,29 @@
     <header>
       <nav>
         <a href="index.html" class="logo">The Grand Archive</a>
-        <ul>
+        <ul class="main-nav">
+          <li><a href="quiz-library.html">All Quizzes</a></li>
           <li><a href="leaderboard.html">Leaderboards</a></li>
-          <li>
-            <a href="profile.html" id="profile-link" class="hidden">Profile</a>
-          </li>
-          <li>
-            <a href="settings.html"><i class="fas fa-cog"></i>Settings</a>
-          </li>
-          <li><button id="auth-button">Login</button></li>
         </ul>
+        <div class="user-menu">
+          <button id="auth-button" class="cta-button">Login</button>
+          <div id="profile-menu-container" class="hidden">
+            <img
+              id="profile-menu-avatar"
+              src="assets/images/default-avatar.png"
+              alt="User Avatar"
+            />
+            <div id="profile-dropdown" class="profile-dropdown-content hidden">
+              <a href="profile.html"
+                ><i class="fas fa-user-circle"></i> Profile</a
+              >
+              <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+              <a href="#" id="logout-button"
+                ><i class="fas fa-sign-out-alt"></i> Logout</a
+              >
+            </div>
+          </div>
+        </div>
       </nav>
     </header>
 

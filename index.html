@@ -28,16 +28,29 @@
     <header>
       <nav>
         <a href="index.html" class="logo">The Grand Archive</a>
-        <ul>
+        <ul class="main-nav">
+          <li><a href="quiz-library.html">All Quizzes</a></li>
           <li><a href="leaderboard.html">Leaderboards</a></li>
-          <li>
-            <a href="profile.html" id="profile-link" class="hidden">Profile</a>
-          </li>
-          <li>
-            <a href="settings.html"><i class="fas fa-cog"></i>Settings</a>
-          </li>
-          <li><button id="auth-button">Login</button></li>
         </ul>
+        <div class="user-menu">
+          <button id="auth-button" class="cta-button">Login</button>
+          <div id="profile-menu-container" class="hidden">
+            <img
+              id="profile-menu-avatar"
+              src="assets/images/default-avatar.png"
+              alt="User Avatar"
+            />
+            <div id="profile-dropdown" class="profile-dropdown-content hidden">
+              <a href="profile.html"
+                ><i class="fas fa-user-circle"></i> Profile</a
+              >
+              <a href="settings.html"><i class="fas fa-cog"></i> Settings</a>
+              <a href="#" id="logout-button"
+                ><i class="fas fa-sign-out-alt"></i> Logout</a
+              >
+            </div>
+          </div>
+        </div>
       </nav>
     </header>
 
@@ -54,26 +67,14 @@
           >Take the Potions O.W.L.</a
         >
       </section>
-
       <section class="quiz-selection">
-        <h2>Choose Your Challenge</h2>
-        <div class="quiz-grid">
-          <!-- Quizzes will be dynamically loaded here -->
-          <div class="quiz-card">
-            <h3>Sorting Hat</h3>
-            <p>Discover your true Hogwarts House.</p>
-            <a href="quiz.html?id=sorting-hat">Begin</a>
-          </div>
-          <div class="quiz-card star-wars">
-            <h3>Jedi Trials</h3>
-            <p>Is the Force strong with you?</p>
-            <a href="quiz.html?id=jedi-trials">Begin</a>
-          </div>
-        </div>
+        <h2>Featured Quizzes</h2>
+        <div class="quiz-grid"></div>
       </section>
     </main>
 
     <script type="module" src="assets/js/main.js"></script>
+    <script type="module" src="assets/js/homepage.js"></script>
     <div id="notification-container"></div>
   </body>
 </html>

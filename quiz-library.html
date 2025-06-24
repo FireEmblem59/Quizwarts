@@ -1,15 +1,11 @@
+<!-- quiz-library.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Settings - The Grand Archive</title>
     <link rel="stylesheet" href="assets/css/style.css" />
-    <!-- Add FontAwesome for the icons in the toggle switch -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    />
+    <title>Quiz Library - The Grand Archive</title>
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -54,38 +50,15 @@
         </div>
       </nav>
     </header>
-
     <main class="container">
-      <h1>Settings</h1>
-      <p>Customize your experience in the Grand Archive.</p>
-
-      <section class="settings-section">
-        <h2>Appearance & Audio</h2>
-        <div class="setting-item">
-          <label for="theme-toggle">Theme (Light/Dark)</label>
-          <label class="switch">
-            <input type="checkbox" id="theme-toggle" />
-            <span class="slider round">
-              <i class="fas fa-sun icon-off"></i>
-              <i class="fas fa-moon icon-on"></i>
-            </span>
-          </label>
-        </div>
-        <div class="setting-item">
-          <label for="audio-toggle">Enable Sound Effects</label>
-          <label class="switch">
-            <input type="checkbox" id="audio-toggle" />
-            <span class="slider round">
-              <i class="fas fa-volume-xmark icon-off"></i>
-              <i class="fas fa-volume-high icon-on"></i>
-            </span>
-          </label>
-        </div>
-      </section>
+      <h1>The Quiz Library</h1>
+      <p>Explore all the challenges the Grand Archive has to offer.</p>
+      <div id="quiz-library-grid" class="quiz-grid">
+        <!-- Quizzes will be loaded here by JavaScript -->
+      </div>
     </main>
-
     <div id="notification-container"></div>
     <script type="module" src="assets/js/main.js"></script>
-    <script type="module" src="assets/js/settings.js"></script>
+    <script type="module" src="assets/js/quiz-library.js"></script>
   </body>
 </html>

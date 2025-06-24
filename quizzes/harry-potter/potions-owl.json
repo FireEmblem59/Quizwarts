@@ -2,18 +2,13 @@
   "title": "Potions O.W.L. Exam",
   "category": "Harry Potter",
   "difficulty": "O.W.L.",
-  "timeLimit": 300,
+  "timeLimit": 1500,
   "questions": [
     {
-      "question": "Which of these is a key ingredient in the Polyjuice Potion?",
-      "options": [
-        "Lacewing flies",
-        "Bezoar",
-        "Mandrake root",
-        "Boomslang skin"
-      ],
+      "question": "Which of these is a key ingredient in the Polyjuice Potion that must be acquired at the full moon?",
+      "options": ["Fluxweed", "Lacewing flies", "Knotgrass", "Boomslang skin"],
       "answer": 0,
-      "lore": "Lacewing flies must be stewed for 21 days before being used in the Polyjuice Potion."
+      "lore": "Fluxweed must be picked at the full moon for the Polyjuice Potion to work correctly, highlighting the importance of timing in potion-making."
     },
     {
       "question": "What is the primary effect of the Draught of Living Death?",
@@ -27,15 +22,15 @@
       "lore": "The Draught of Living Death is so powerful it can make the drinker appear dead. The antidote is the Wiggenweld Potion."
     },
     {
-      "question": "Felix Felicis is also known as...",
+      "question": "A bezoar is a stone taken from the stomach of a goat and acts as an antidote to which of the following?",
       "options": [
-        "Liquid Luck",
-        "Veritaserum",
-        "Amortentia",
-        "Wolfsbane Potion"
+        "Most poisons",
+        "The Cruciatus Curse",
+        "Dragon Pox",
+        "Werewolf bites"
       ],
       "answer": 0,
-      "lore": "Felix Felicis makes the drinker lucky for a period of time, during which all their endeavors will tend to succeed."
+      "lore": "A bezoar is a simple but effective antidote to many common poisons, though it is ineffective against complex dark magic like Basilisk venom."
     },
     {
       "question": "Which potion would you use to regrow bones?",
@@ -47,6 +42,232 @@
       ],
       "answer": 2,
       "lore": "Harry had to take Skele-Gro after Gilderoy Lockhart accidentally removed the bones from his arm. The process is famously unpleasant."
+    },
+    {
+      "question": "What is the most powerful love potion in existence?",
+      "options": [
+        "Amortentia",
+        "Veritaserum",
+        "Felix Felicis",
+        "Beguiling Bubbles"
+      ],
+      "answer": 0,
+      "lore": "Amortentia doesn't create true love, but an intense infatuation. It smells different to each person, reminding them of the things they find most attractive."
+    },
+    {
+      "question": "The Wolfsbane Potion allows a werewolf to do what?",
+      "options": [
+        "Cure their lycanthropy",
+        "Remain human during the full moon",
+        "Keep their human mind as a wolf",
+        "Communicate with other wolves"
+      ],
+      "answer": 2,
+      "lore": "Invented by Damocles Belby, the Wolfsbane Potion is a complex and dangerous brew that allows a werewolf to retain their mind, making them a harmless, sleepy wolf."
+    },
+    {
+      "question": "According to Professor Slughorn, what is the correct way to stir the Draught of Living Death after adding the Sopophorous bean juice?",
+      "options": [
+        "Seven times clockwise",
+        "Seven times counter-clockwise",
+        "Three times clockwise, then once counter-clockwise",
+        "Seven times counter-clockwise, then once clockwise"
+      ],
+      "answer": 3,
+      "lore": "This crucial detail, discovered by the Half-Blood Prince, was the secret to brewing the potion perfectly, a fact that eluded even Hermione."
+    },
+    {
+      "question": "Which of these is NOT an ingredient in a standard Wiggenweld Potion, the antidote to the Draught of Living Death?",
+      "options": [
+        "A Horklump tentacle",
+        "Powdered unicorn horn",
+        "Dittany",
+        "Moly"
+      ],
+      "answer": 1,
+      "lore": "While powerful, powdered unicorn horn is not a standard ingredient in the Wiggenweld Potion. Its other ingredients include Wiggentree bark and Murtlap tentacles."
+    },
+    {
+      "question": "What is the effect of the Elixir to Induce Euphoria?",
+      "options": [
+        "It causes the drinker to become uncontrollably happy.",
+        "It makes the drinker extremely lucky.",
+        "It grants the drinker immense strength.",
+        "It allows the drinker to breathe underwater."
+      ],
+      "answer": 0,
+      "lore": "The Elixir to Induce Euphoria, a sunny yellow potion, causes intense happiness but has side effects like excessive singing and nose-tweaking."
+    },
+    {
+      "question": "Veritaserum forces the drinker to do what?",
+      "options": [
+        "Fall asleep",
+        "Fall in love with the first person they see",
+        "Answer any question truthfully",
+        "Forget recent memories"
+      ],
+      "answer": 2,
+      "lore": "Veritaserum is a powerful truth serum, but a skilled wizard can resist its effects through Occlumency or by transfiguring the potion before it touches their lips."
+    },
+    {
+      "question": "The Draught of Peace is notoriously difficult to brew because it requires the ingredients to be added in what specific order?",
+      "options": [
+        "From heaviest to lightest",
+        "Alphabetical order",
+        "A very precise, non-obvious order",
+        "The order does not matter"
+      ],
+      "answer": 2,
+      "lore": "The Draught of Peace is a calming potion to relieve anxiety, but brewing it incorrectly can cause the drinker to fall into a heavy, sometimes irreversible sleep."
+    },
+    {
+      "question": "What is the primary use of a Shrinking Solution?",
+      "options": [
+        "To make objects smaller",
+        "To reverse the effects of an Engorgement Charm",
+        "To de-age a person temporarily",
+        "All of the above"
+      ],
+      "answer": 1,
+      "lore": "While it can shrink things, its primary textbook purpose is as the direct counter-potion to the Engorgement Charm, 'Engorgio'."
+    },
+    {
+      "question": "What happens if you add too much peppermint to an Elixir to Induce Euphoria?",
+      "options": [
+        "The potion explodes",
+        "It turns into a poison",
+        "It may cause uncontrollable singing and dancing",
+        "It simply loses its effect"
+      ],
+      "answer": 2,
+      "lore": "This is a common mistake for O.W.L. students. The peppermint is a key component, but an excess leads to giddy, often embarrassing, side effects."
+    },
+    {
+      "question": "What is the main purpose of the Ageing Potion?",
+      "options": [
+        "To permanently make someone older",
+        "To see into the future",
+        "To temporarily make the drinker older",
+        "To make objects appear ancient"
+      ],
+      "answer": 2,
+      "lore": "Fred and George Weasley famously used this potion in an attempt to cross the Age Line and enter the Triwizard Tournament, resulting in them growing long white beards."
+    },
+    {
+      "question": "Which ingredient is essential for a Babbling Beverage?",
+      "options": [
+        "Alihotsy leaves",
+        "Flobberworm Mucus",
+        "Billywig stings",
+        "Shrivelfig"
+      ],
+      "answer": 0,
+      "lore": "The leaves of the Alihotsy tree, also known as the Hyena tree, cause hysteria and uncontrollable laughter, which is the key to a Babbling Beverage's nonsensical speech effect."
+    },
+    {
+      "question": "The Emerald Potion, also known as the Drink of Despair, which protected Voldemort's locket Horcrux, had what primary effect?",
+      "options": [
+        "It caused intense physical pain",
+        "It induced extreme fear and regret by showing terrible memories",
+        "It slowly petrified the drinker",
+        "It drained the drinker of their magical power"
+      ],
+      "answer": 1,
+      "lore": "This dreadful dark potion did not kill directly but caused such mental anguish that the drinker was severely weakened, often to the point of death from dehydration or despair."
+    },
+    {
+      "question": "What is the Statute of Secrecy-violating ingredient in a Doxycide potion, used to paralyze Doxies?",
+      "options": [
+        "Bundimun Secretion",
+        "Dragon liver",
+        "Erumpent Horn",
+        "Steeler shell"
+      ],
+      "answer": 0,
+      "lore": "Bundimun Secretion is highly effective but difficult to handle, as it can rot the very structure of the building it's used in if not properly contained."
+    },
+    {
+      "question": "The Hiccoughing Potion is a simple remedy. What is its standard colour?",
+      "options": ["Turquoise", "Pink", "Yellow", "Clear"],
+      "answer": 0,
+      "lore": "A simple but effective brew taught to first-year students, its turquoise colour is a common sight in the Hogwarts hospital wing for minor ailments."
+    },
+    {
+      "question": "Which of these potions would be most effective for treating someone who has been Stung by a Billywig?",
+      "options": [
+        "A solution of dried nettles and stewed horned slugs",
+        "A paste of crushed Fire-Seeds and lavender",
+        "Dittany applied directly to the wound",
+        "A common Antidote Potion"
+      ],
+      "answer": 0,
+      "lore": "The sting of a Billywig causes giddiness and levitation. The specific combination of nettles and horned slugs grounds the victim and counteracts the venom."
+    },
+    {
+      "question": "To create a Swelling Solution, one must carefully add Puffer-fish eyes. What is the consequence of adding them before the potion is removed from the fire?",
+      "options": [
+        "The potion will emit green smoke and explode",
+        "The potion will become a Deflating Draught instead",
+        "The swelling effect will become permanent",
+        "The potion will turn a sickly orange colour"
+      ],
+      "answer": 1,
+      "lore": "This is a classic trick question in potion-making. The heat inverts the magical properties of the Puffer-fish eyes, creating the potion's exact opposite."
+    },
+    {
+      "question": "What is the defining characteristic of a properly brewed Garrotting Gas potion?",
+      "options": [
+        "It is a purple vapour",
+        "It is invisible and silent",
+        "It smells faintly of rotten eggs",
+        "It glows with a soft, green light"
+      ],
+      "answer": 1,
+      "lore": "Garrotting Gas is a dangerous substance that creates an invisible vapour which constricts the airway, making it a favoured tool for assassins and dark wizards."
+    },
+    {
+      "question": "The famous potioneer Zygmunt Budge is credited with inventing many potions. Which of these is his most celebrated creation?",
+      "options": [
+        "Felix Felicis",
+        "Polyjuice Potion",
+        "Beautification Potion",
+        "The Cure for Boils"
+      ],
+      "answer": 2,
+      "lore": "Zygmunt Budge was a brilliant but vain potioneer. His Beautification Potion is renowned for its ability to remove physical imperfections, though effects are temporary."
+    },
+    {
+      "question": "In the brewing of a Forgetfulness Potion, what is the purpose of adding Lethe River Water?",
+      "options": [
+        "To stabilize the mixture",
+        "To add a memory-wiping magical component",
+        "To give the potion its blue colour",
+        "To dilute the other potent ingredients"
+      ],
+      "answer": 1,
+      "lore": "The Lethe River is a river from Greek mythology whose waters caused forgetfulness. Its magical properties are harnessed to create the potion's primary effect."
+    },
+    {
+      "question": "Which of these is a Class C Non-Tradeable Substance, meaning its sale and use are strictly controlled by the Ministry of Magic?",
+      "options": [
+        "Powdered Moonstone",
+        "Dried Billywig Stings",
+        "Venomous Tentacula Juice",
+        "Asphodel root"
+      ],
+      "answer": 2,
+      "lore": "Venomous Tentacula Juice is highly poisonous and its trade is restricted due to its potential for misuse in dark potions and assassinations."
+    },
+    {
+      "question": "Scurvy-grass, Lovage, and Sneezewort are all key ingredients in which helpful concoction?",
+      "options": [
+        "Draught of Peace",
+        "Pepperup Potion",
+        "Confusing Concoction",
+        "Wound-Cleaning Potion"
+      ],
+      "answer": 3,
+      "lore": "This potion, often used by Madam Pomfrey, combines the antiseptic properties of Lovage and the healing qualities of Sneezewort to effectively clean wounds."
     }
   ]
 }

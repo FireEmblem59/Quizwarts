@@ -1,3 +1,5 @@
+// In assets/js/leaderboard.js
+
 import { db } from "./firebase-config.js";
 import {
   collection,
@@ -6,17 +8,19 @@ import {
   limit,
   getDocs,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+import { getQuizTitlesMap } from "./quiz-service.js";
 
+// --- Global DOM Elements ---
 const leaderboardBody = document.getElementById("leaderboard-body");
 const leaderboardTitle = document.getElementById("leaderboard-title");
+let availableQuizzes = {}; // This will be populated dynamically
 
-// A predefined list of quizzes for a dropdown selector
-const availableQuizzes = {
-  "potions-owl": "Potions O.W.L.",
-  "jedi-trials": "Jedi Trials", // Add more as you create them
-  "sorting-hat": "Sorting Hat",
-};
+// --- Functions ---
 
+/**
+ * Creates the dropdown menu for selecting a leaderboard.
+ * @param {string} currentQuizId The ID of the currently selected quiz.
+ */
 function createQuizSelector(currentQuizId) {
   let selectorHtml = `<label for="quiz-select">Select Leaderboard: </label>
     <select id="quiz-select">`;
@@ -25,17 +29,29 @@ function createQuizSelector(currentQuizId) {
     selectorHtml += `<option value="${id}" ${selected}>${title}</option>`;
   }
   selectorHtml += `</select>`;
-  leaderboardTitle.insertAdjacentHTML("afterend", selectorHtml);
+
+  // Clear any old selector before adding a new one
+  const oldSelector = document.getElementById("quiz-select-container");
+  if (oldSelector) oldSelector.remove();
+
+  const selectorContainer = document.createElement("div");
+  selectorContainer.id = "quiz-select-container";
+  selectorContainer.innerHTML = selectorHtml;
+  leaderboardTitle.insertAdjacentElement("afterend", selectorContainer);
 
   document.getElementById("quiz-select").addEventListener("change", (e) => {
-    // Change the URL without reloading the page to load the new leaderboard
+    // Change the URL which will trigger a page reload and fetch the new leaderboard
     window.location.search = `?id=${e.target.value}`;
   });
 }
 
+/**
+ * Fetches and displays the top 10 scores for a given quiz.
+ * @param {string} quizId The ID of the quiz to fetch the leaderboard for.
+ */
 async function fetchAndDisplayLeaderboard(quizId) {
   leaderboardTitle.textContent = `Leaderboard: ${
-    availableQuizzes[quizId] || "Unknown"
+    availableQuizzes[quizId] || "Select a Quiz"
   }`;
   leaderboardBody.innerHTML =
     '<tr><td colspan="3">Loading rankings...</td></tr>';
@@ -47,7 +63,6 @@ async function fetchAndDisplayLeaderboard(quizId) {
       limit(10)
     );
     const querySnapshot = await getDocs(scoresQuery);
-
     leaderboardBody.innerHTML = ""; // Clear loading message
 
     if (querySnapshot.empty) {
@@ -60,17 +75,17 @@ async function fetchAndDisplayLeaderboard(quizId) {
     querySnapshot.forEach((doc) => {
       const data = doc.data();
       const row = `
-                <tr>
-                    <td>${rank++}</td>
-                    <td class="player-cell">
-                        <img src="${
-                          data.photoURL || "https://via.placeholder.com/40"
-                        }" alt="avatar" class="avatar-small">
-                        <span>${data.displayName}</span>
-                    </td>
-                    <td>${data.score}</td>
-                </tr>
-            `;
+        <tr>
+            <td>${rank++}</td>
+            <td class="player-cell">
+                <img src="${
+                  data.photoURL || "assets/images/default-avatar.png"
+                }" alt="avatar" class="avatar-small">
+                <span>${data.displayName}</span>
+            </td>
+            <td>${data.score}</td>
+        </tr>
+      `;
       leaderboardBody.innerHTML += row;
     });
   } catch (error) {
@@ -80,14 +95,33 @@ async function fetchAndDisplayLeaderboard(quizId) {
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  let quizId = urlParams.get("id");
+/**
+ * Main initialization function that runs on page load.
+ */
+async function initializePage() {
+  // 1. Fetch the list of all quizzes automatically
+  availableQuizzes = await getQuizTitlesMap();
 
-  if (!quizId || !availableQuizzes[quizId]) {
-    quizId = "potions-owl"; // Default to potions-owl if no/invalid ID is provided
+  // 2. Determine which quiz to show
+  const urlParams = new URLSearchParams(window.location.search);
+  let currentQuizId = urlParams.get("id");
+
+  // Default to the first quiz in the list if the ID is invalid or not provided
+  const quizIds = Object.keys(availableQuizzes);
+  if (!currentQuizId || !quizIds.includes(currentQuizId)) {
+    currentQuizId = quizIds[0] || null;
   }
 
-  createQuizSelector(quizId);
-  fetchAndDisplayLeaderboard(quizId);
-});
+  // 3. Build the UI
+  createQuizSelector(currentQuizId);
+  if (currentQuizId) {
+    fetchAndDisplayLeaderboard(currentQuizId);
+  } else {
+    leaderboardTitle.textContent = "No Quizzes Available";
+    leaderboardBody.innerHTML =
+      '<tr><td colspan="3">Add quizzes to the manifest to see leaderboards.</td></tr>';
+  }
+}
+
+// --- Run the app ---
+initializePage();

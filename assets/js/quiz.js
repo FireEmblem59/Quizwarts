@@ -12,6 +12,8 @@ import { showNotification } from "./notifications.js";
 
 import { playSound } from "./audio.js";
 
+import { getAllQuizzes } from "./quiz-service.js";
+
 // DOM Elements
 const quizContainer = document.getElementById("quiz-container");
 const resultsContainer = document.getElementById("results-container");
@@ -46,19 +48,32 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function loadQuiz(id) {
   try {
-    const response = await fetch(`./quizzes/harry-potter/${id}.json`);
-    if (!response.ok) throw new Error("Quiz file not found");
-    currentQuizData = await response.json();
+    const quizzes = await getAllQuizzes();
+    const quizInfo = quizzes.find((q) => q.id === id);
 
+    if (!quizInfo) throw new Error("Quiz not found in manifest");
+
+    // Use the filePath from the manifest
+    const response = await fetch(`../quizzes/${quizInfo.filePath}`);
+    if (!response.ok) throw new Error("Quiz file not found at path");
+    currentQuizData = await response.json();
     startQuiz();
   } catch (error) {
     console.error("Could not load quiz:", error);
-    loadingScreen.innerHTML = `<p>Error: Could not load the quiz. Please try again later.</p>`;
   }
 }
 
 // --- QUIZ LOGIC ---
 function startQuiz() {
+  const quizId = new URLSearchParams(window.location.search).get("id");
+
+  if (quizId) {
+    const statRef = doc(db, "quiz_stats", quizId);
+    // setDoc with {merge: true} will create or update the document.
+    // increment(1) safely adds one to the playCount.
+    setDoc(statRef, { playCount: increment(1) }, { merge: true });
+  }
+
   loadingScreen.classList.add("hidden");
   quizContainer.classList.remove("hidden");
 
@@ -73,11 +88,25 @@ function startQuiz() {
   displayQuestion();
 }
 
+function formatTime(seconds) {
+  const hrs = Math.floor(seconds / 3600);
+  const mins = Math.floor((seconds % 3600) / 60);
+  const secs = seconds % 60;
+
+  const padded = (num) => String(num).padStart(2, "0");
+
+  if (hrs > 0) {
+    return `${padded(hrs)}:${padded(mins)}:${padded(secs)}`;
+  } else {
+    return `${padded(mins)}:${padded(secs)}`;
+  }
+}
+
 function startTimer() {
-  timerDisplay.textContent = timeLeft;
+  timerDisplay.textContent = formatTime(timeLeft);
   timer = setInterval(() => {
     timeLeft--;
-    timerDisplay.textContent = timeLeft;
+    timerDisplay.textContent = formatTime(timeLeft);
     if (timeLeft <= 0) {
       clearInterval(timer);
       endQuiz();
