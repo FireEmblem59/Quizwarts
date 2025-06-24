@@ -13,7 +13,7 @@ async function getQuizManifest() {
   }
 
   try {
-    const response = await fetch("../quizzes/manifest.json");
+    const response = await fetch("quizzes/manifest.json");
     if (!response.ok) {
       throw new Error("Could not load quiz manifest.");
     }

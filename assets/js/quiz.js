@@ -54,7 +54,7 @@ async function loadQuiz(id) {
     if (!quizInfo) throw new Error("Quiz not found in manifest");
 
     // Use the filePath from the manifest
-    const response = await fetch(`../quizzes/${quizInfo.filePath}`);
+    const response = await fetch(`quizzes/${quizInfo.filePath}`);
     if (!response.ok) throw new Error("Quiz file not found at path");
     currentQuizData = await response.json();
     startQuiz();
