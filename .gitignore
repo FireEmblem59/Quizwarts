@@ -1,6 +1,1 @@
-admin-scripts
-
-# Ignore Firebase service account key
-
-admin-scripts/service-account-key.json
-admin-scripts/test.json
+admin-scripts/
