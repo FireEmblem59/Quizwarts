@@ -240,6 +240,14 @@ nav ul button:hover {
 #quiz-container {
   text-align: center;
 }
+
+#quiz-title {
+  max-width: 700px;
+  margin: 0 auto;
+  word-wrap: break-word;
+  text-align: center; /* if desired */
+}
+
 #question-text {
   font-size: 1.5rem;
   margin: 2rem 0;
@@ -307,6 +315,32 @@ nav ul button:hover {
   display: inline-block;
   width: 8ch;
   text-align: center;
+}
+
+#quiz-progress {
+  font-family: var(--primary-font);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--text-color);
+  background: rgba(0, 0, 0, 0.05);
+  padding: 5px 15px;
+  border-radius: 20px;
+}
+body.night-mode #quiz-progress {
+  color: var(--text-color);
+}
+
+.save-score-prompt {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 2px dashed var(--accent-color);
+  border-radius: 8px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.save-score-prompt p {
+  margin: 0 0 1rem 0;
+  font-weight: bold;
 }
 
 .results-actions {
@@ -430,6 +464,31 @@ nav ul button:hover {
 }
 #leaderboard-table tr:last-child td {
   border-bottom: none;
+}
+
+#user-rank-container {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 2px dashed var(--border-color);
+}
+
+#user-rank-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+/* We can reuse the main table styles, but add a highlight for the user's row */
+#user-rank-table td {
+  padding: 12px 15px;
+  vertical-align: middle;
+  background-color: var(--accent-color);
+  color: #fff;
+  border: 2px solid var(--accent-color);
+}
+
+#user-rank-table .player-cell img {
+  border: 2px solid #fff;
 }
 
 .time-cell {
