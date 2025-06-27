@@ -9,8 +9,8 @@ import {
   limit,
   getDocs,
   where,
-  startAfter,
-  documentId,
+  doc,
+  getDoc,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 
 import { getQuizTitlesMap } from "./quiz-service.js";
